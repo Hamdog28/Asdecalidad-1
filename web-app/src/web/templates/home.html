@@ -17,7 +17,14 @@
 <form action="" method="post">
 {% csrf_token %}
 <input type="submit" value="cargar datos">
+
 </form>
+{{retorno}}
+</p>
+{% for o in datos %}
+   {% cycle o '</p>' %}
+     
+{% endfor %}
 </body>
 
 </html>
