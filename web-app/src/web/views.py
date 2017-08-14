@@ -15,11 +15,11 @@ def home(request):
         
         gs.cargar()
         lista=[]
-        for i in gs.lista_sujetos: 
-            lista.append(i.nombre)
-        print(lista)
-        return render(request,"home.html",{"retorno":"Carga completa","datos":lista})
-    return render(request,"home.html",{})
+        #for i in gs.lista_sujetos: 
+        #   lista.append(i.nombre)
+        
+        return render(request,"home.html",{"retorno":"Carga completa","datos":lista,"class":"btimgok","text":"Sistema entrenado"})
+    return render(request,"home.html",{"class":"btimgko","text":"Entrenar sistema"})
 
   
 """
