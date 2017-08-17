@@ -1,0 +1,5 @@
+lab5
+-indicar si los numeros son iguales y si no indicar cual de los dos es mayor
+
+lab6
+-Leer un numero hexadecimal

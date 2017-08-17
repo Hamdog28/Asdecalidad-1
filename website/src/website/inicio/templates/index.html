@@ -1,4 +1,5 @@
 {%load staticfiles%}
+
 <!DOCTYPE html>
 <!-- Template by Quackit.com -->
 <!-- Images by various sources under the Creative Commons CC0 license and/or the Creative Commons Zero license. 
@@ -71,13 +72,16 @@ Although you can use them, for a more unique website, replace these images with 
 
 	<!-- Header -->
     <header>
+    <form action="/inicio/imagen" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
         <div class="header-content">
             <div class="header-content-inner">
                 <h1>Sistema de reconocimiento facial</h1>
                 <p>Seleccione la imagen para el reconocimiento facial</p>
-                <input id="input-1a" type="file" class="file" data-show-preview="false">
+                <input id="input-1a" type="file" class="file" data-show-preview="false" name="file" id="file" required>
             </div>
         </div>
+    </form>
     </header>
 
 	
@@ -114,7 +118,7 @@ Although you can use them, for a more unique website, replace these images with 
     <script src="{% static 'js/jquery.easing.min.js' %}"></script>
     
     <!-- Custom Javascript -->
-    <script src='{% static 'js/custom.js' %}'></script>
+    <script src="{% static 'js/custom.js' %}"></script>
 	
 </body>
 
