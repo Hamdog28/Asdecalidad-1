@@ -1,7 +1,7 @@
 
-from controlador.gestorSujetos import gestorSujeto
-from modelo.sujeto import sujeto
-gs=gestorSujeto()
+from .controlador.gestorSujetos import gestorSujetos
+from .modelo.sujeto import sujeto
+gs=gestorSujetos()
 
 gs.cargar()
 

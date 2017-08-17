@@ -14,3 +14,12 @@ class imagen:
             self.vector=np.concatenate((self.vector,i),axis=0)
         
 
+    def leerImagenes(self,nombre_archivo,directorio):
+           
+        self.img = cv2.imread(self.directorio+"/"+nombre_archivo)
+        
+        self.vectorizar()
+    
+            
+    def imgAgris(self):
+        return cv2.cvtColor(self.img,cv2.COLOR_BGR2GRAY)

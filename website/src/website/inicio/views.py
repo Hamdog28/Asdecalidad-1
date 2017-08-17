@@ -1,8 +1,10 @@
 from django.http import HttpResponse
 from django.template import loader
 from django.http import HttpResponseRedirect
+import sys 
 from django.shortcuts import render
 import os 
+
 
 def index(request):
     template = loader.get_template('index.html')
@@ -24,4 +26,6 @@ def handle_uploaded_file(file, filename):
     with open('upload/' + filename, 'wb+') as destination:
         for chunk in file.chunks():
             destination.write(chunk)
+    #img=imagen()
+    #img.leerImagenes(filename,'upload/')
           
