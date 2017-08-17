@@ -5,7 +5,7 @@ sys.path.append("..")
 
 from .modelo.sujeto import sujeto 
 
-class gestorSujeto:
+class gestorSujetos:
     def __init__(self):
         self.lista_sujetos=[]
         self.BDmustral=DAOBDmuestral()
