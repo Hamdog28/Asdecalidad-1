@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-from .BackEnd.controlador.gestorSujetos import gestorSujeto
+from .BackEnd.controlador.gestorSujetos import gestorSujetos
 
 """
 def home(request):
@@ -11,7 +11,7 @@ def home(request):
 
 def home(request):
     if request.method == 'POST':
-        gs=gestorSujeto()
+        gs=gestorSujetos()
         
         gs.cargar()
         lista=[]
