@@ -4,7 +4,7 @@ import os
 import sys 
 from django.conf import settings
 sys.path.append("..")
-from .modelo.imagen import imagen
+from modelo.imagen import imagen 
 
 class DAOBDmuestral:
 

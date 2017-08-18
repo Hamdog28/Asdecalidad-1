@@ -3,7 +3,7 @@ from .DAOBDmuestral import DAOBDmuestral
   
 sys.path.append("..")
 
-from .modelo.sujeto import sujeto 
+from modelo.sujeto import sujeto 
 
 class gestorSujetos:
     def __init__(self):
