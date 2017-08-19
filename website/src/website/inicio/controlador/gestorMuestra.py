@@ -1,8 +1,8 @@
 from .DAOBDmuestral import DAOBDmuestral
   
 
-from ..modelo.sujeto import sujeto 
-from ..modelo.muestra import muestra
+from modelo.sujeto import sujeto 
+from modelo.muestra import muestra
 
 class gestorMuestra:
     '''

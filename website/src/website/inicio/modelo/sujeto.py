@@ -1,5 +1,5 @@
 import numpy as np
-from .imagen import imagen
+from modelo.imagen import imagen
 
 
 class sujeto:
