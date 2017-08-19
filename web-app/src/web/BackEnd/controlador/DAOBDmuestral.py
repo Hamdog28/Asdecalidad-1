@@ -1,10 +1,12 @@
 import numpy as np
 import cv2
+from cv2 import WINDOW_NORMAL
+import itertools
 import os
-import sys 
-from django.conf import settings
-sys.path.append("..")
-from .modelo.imagen import imagen
+
+
+
+from ..modelo.imagen import imagen
 
 class DAOBDmuestral:
 
@@ -16,7 +18,7 @@ class DAOBDmuestral:
         self.directorio= self.ROOT_PATH+"/BaseDatosMuestral/input"
         
     def leerCarpetas(self):
-       for filename in os.listdir( self.directorio):
+       for filename in os.listdir(self.directorio):
            self.nombres_carpetas.append(filename) 
 
     def leerImagenes(self,sujeto):
