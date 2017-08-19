@@ -1,25 +1,23 @@
-
 import numpy as np
 from .imagen import imagen
 
 
 class sujeto:
+    '''
+    Clase encargada de representar a los sujetos a quienes pertenecen las imagenes.
+    '''
     def __init__(self,nombre):
+        '''
+        Constructor
+        :param nombre: Nombre del sujeto.
+        '''
         self.nombre=nombre
         self.imagenes=[]
         self.matriz=[]
             
     def agregarImagene(self,imagen):
+        '''
+        Agrega una imagen a la lista de imagenes del sujeto.
+        :param imagen: Imagen a agregar.
+        '''
         self.imagenes.append(imagen)
-        
-    def generarMatriz(self):
-        
-        for i in self.imagenes[0].vector:
-            self.matriz.append([])
-        
-        for i in range(len(self.imagenes)):
-            for j in range(len(self.imagenes[i].vector)):
-                self.matriz[j].append(self.imagenes[i].vector[j])
-                 
-        return self.matriz
- 
