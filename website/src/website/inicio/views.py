@@ -28,5 +28,6 @@ def handle_uploaded_file(file, filename):
         for chunk in file.chunks():
             destination.write(chunk)
     img=imagen([])
+    img.directorio='upload/'
     img.leerImagenes(filename)
           
