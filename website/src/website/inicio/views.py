@@ -27,6 +27,6 @@ def handle_uploaded_file(file, filename):
     with open('upload/' + filename, 'wb+') as destination:
         for chunk in file.chunks():
             destination.write(chunk)
-    img=imagen(file)
+    img=imagen([])
     img.leerImagenes(filename)
           
