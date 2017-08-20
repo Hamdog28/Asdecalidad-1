@@ -5,7 +5,7 @@ class imagen:
     def __init__(self,img):
         self.img=img
         self.vector=[]
-        self.directorio= "./BaseDatosMuestral/ejemplos" #Se debe agregar el directorio coorespondiente
+        self.directorio= "/upload" #Se debe agregar el directorio coorespondiente
         
     def vectorizar(self):
         
