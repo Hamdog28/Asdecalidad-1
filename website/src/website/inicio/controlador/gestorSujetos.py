@@ -1,5 +1,5 @@
 import sys
-from .DAOBDmuestral import DAOBDmuestral
+from controlador.DAOBDmuestral import DAOBDmuestral
   
 sys.path.append("..")
 

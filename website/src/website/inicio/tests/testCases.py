@@ -1,5 +1,6 @@
 import unittest
 #import controlador.DAOBDmuestral.DAOBDmuestral
+from modelo.imagen import imagen
 from controlador.DAOBDmuestral import DAOBDmuestral
 from controlador.gestorMuestra import gestorMuestra
 from controlador.gestorSujetos import gestorSujetos
@@ -9,6 +10,7 @@ class testCases(unittest.TestCase):
     '''
     Clase destinada a la ejecucion de pruebas unittest
     '''
+    
     
     def testCargarDesdeBD(self):
         gestor=gestorSujetos()
@@ -36,13 +38,26 @@ class testCases(unittest.TestCase):
         gestor=gestorMuestra()
         gestor.cargar()
         
-        #Revisa si se creó la matriz de imagenes.
+        #Revisa si se creo la matriz de imagenes.
         self.assertTrue(gestor.muestra.matriz, "No hay matriz de imagenes")
         
         
         
         
-    def test3(self):
+    def testCambiarTamano(self):
+        gestor=gestorSujetos()
+        
+        gestor.cargar()
+        for sujeto in gestor.lista_sujetos:
+            for imagen in sujeto.imagenes:
+                imagenPrueba=imagen
+                tamanoPrueba=(200,100,3)
+                imagenPrueba.cambiarDimensionesImagen(tamanoPrueba[1], tamanoPrueba[0])
+                self.assertEqual(imagenPrueba.img.shape, tamanoPrueba, "El tamano de la imagen (Especifico) no fue cambiado correctamente")
+                tamanoPrueba=(100,50,3)
+                imagenPrueba.cambiarTamanoPorcentualImagen(0.5, 0.5)
+                self.assertEqual(imagenPrueba.img.shape, tamanoPrueba, "El tamano de la imagen (Porcentual) no fue cambiado correctamente")
+                
         print("")
         
     def test4(self):

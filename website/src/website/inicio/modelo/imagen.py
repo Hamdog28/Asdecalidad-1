@@ -44,3 +44,20 @@ class imagen:
         Retorna la imagen en escala de grises. 
         '''
         return cv2.cvtColor(self.img,cv2.COLOR_BGR2GRAY)
+    
+    def cambiarTamanoPorcentualImagen(self, porcentajeX, porcentajeY):
+        '''
+        Le cambia el tamano a la imagen a un porcentaje del original (1.0=100%)
+        :param porcentajeX: Porcentaje en X 
+        :param porcentajeY: Porjentaje en Y
+        '''
+        self.img=cv2.resize(self.img, (0,0), fx = porcentajeX, fy = porcentajeY)
+
+    def cambiarDimensionesImagen(self, tamanoX, tamanoY):
+        '''
+        Le cambia el tamano a la imagen a un tamano determinado
+        :param tamanoX: Pixeles en X
+        :param tamanoY: Pixeles en Y
+        '''
+        
+        self.img=cv2.resize(self.img, (tamanoX, tamanoY))

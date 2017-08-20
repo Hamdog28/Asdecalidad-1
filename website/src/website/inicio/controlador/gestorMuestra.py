@@ -1,6 +1,5 @@
-from .DAOBDmuestral import DAOBDmuestral
-  
-
+#from .DAOBDmuestral import DAOBDmuestral
+from controlador.DAOBDmuestral import DAOBDmuestral
 from modelo.sujeto import sujeto 
 from modelo.muestra import muestra
 
