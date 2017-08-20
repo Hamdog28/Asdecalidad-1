@@ -15,9 +15,10 @@ def index(request):
 def upload_file(request):
     if request.method == 'POST':
         handle_uploaded_file(request.FILES['file'], str(request.FILES['file']))
-        return HttpResponseRedirect("/inicio")
- 
-    return HttpResponse("Failed")
+        return HttpResponse('<script>function mensaje() {alert("Imagen ingresada con exito"); }mensaje();window.location.replace("http://127.0.0.1:8000/inicio");</script> ')
+        
+    return HttpResponse('<script>function mensaje() {alert("Imagen ingresada incorrectaente"); }mensaje();window.location.replace("http://127.0.0.1:8000/inicio");</script> ')
+
  
 def handle_uploaded_file(file, filename):
     if not os.path.exists('upload/'):
