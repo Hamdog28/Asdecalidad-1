@@ -1,0 +1,423 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{palatino}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.5cm
+\topmargin 3cm
+\rightmargin 2.5cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\paragraph_spacing double
+\align center
+
+\size larger
+\lang english
+Instituto Tecnológico de Costa Rica
+\size default
+ 
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\align center
+
+\lang english
+Ingeniería en Computación
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\align center
+
+\lang english
+IC6831 - Aseguramiento de Calidad
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang english
+Proyecto semestral: Prueba de concepto
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang english
+Profesor: Saúl Calderón Ramírez 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\align center
+
+\lang english
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang english
+Estudiantes:
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang english
+Luis Alonso Cascante Franco 2014159896 
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang english
+Olman Castillo Picado 2015148651
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang english
+María Laura Pizarro Moreno 2015120626
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang english
+Gabriel Venegas Castro 2013115967
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang english
+Segundo semestre 2017
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Standard
+Una prueba de concepto es una implementación mínima de una idea o concepto.
+ Esta etapa será utilizada para probar la factibilidad de las idea, tecnologías
+ y algoritmos para resolver las necesidades básicas del proyecto semestral.
+ Se desarrollarán 6 tozos; cargar imágenes, pasar de color a blanco y negro
+ las imágenes utilizadas por el programa, vectorizar imágenes, crear matriz
+ con los vectores creados, cambiar las dimensiones de una imagen y calcular
+ matrices de covarianza.
+ Además se utilizará la herramienta zoho proyects para implementar el método
+ scrum y Github para manejar el control de versiones.
+ Se van a hacer pruebas unitarias de cada trozo en el programa Eclipse utilizand
+o el lenguaje python para el back-end y Django para hacer el front-end.
+\end_layout
+
+\begin_layout Section
+Análisis del problema
+\end_layout
+
+\begin_layout Standard
+El problema propuesto será descompuesto en sub-problemas, además de tomar
+ en cuenta los requerimientos funcionales especificados en tal descomposición
+ del problema.
+\end_layout
+
+\begin_layout Enumerate
+Cargar imágenes: El usuario va a poder cargar una imagen desde el front-end.
+\end_layout
+
+\begin_layout Enumerate
+Pasar de color a blanco y negro las imágenes: Toda imagen que el programe
+ manipule, ya sea de la base de datos o ingresada por el usuario se va a
+ convertir a una escala de grises.
+\end_layout
+
+\begin_layout Enumerate
+Vectorizar imágenes: Todas las imágenes que el programa utilice van a ser
+ vectorizadas, lo que significa que en cada vector se va a almacenar el
+ valor de cada pixel de cada imagen.
+\end_layout
+
+\begin_layout Enumerate
+Crear matriz con las imágenes vectorizadas: Luego de vectorizar las imágenes
+ dichos vectores se van a almacenar en una misma matriz.
+\end_layout
+
+\begin_layout Enumerate
+Cambiar las dimensiones de una imagen: Toda imagen que el usuario ingrese
+ al sistema, sus dimensiones van a ser modificadas para que no hayan conflictos
+ en el programa.
+\end_layout
+
+\begin_layout Enumerate
+Cálculo de matrices de covarianza: Es necesario calcular la matriz de covarianza
+ para determinar cuáles de los pixeles presentes en las imágenes son los
+ más relevantes para el algoritmo de reconocimiento de caras.
+ La matriz de covarianza permite saber qué dimensiones aportan la menor
+ cantidad de información para ser desechadas al llevar a cabo la reducción
+ de dimensiones.
+\end_layout
+
+\begin_layout Section
+Diagrama de componentes
+\end_layout
+
+\begin_layout Standard
+El programa se compone de los siguientes componentes:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename modelo.png
+	special center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de componentes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Implementación y pruebas
+\end_layout
+
+\begin_layout Standard
+El documento que especifica las pruebas, los métodos, variables y demás
+ se encuentra por aparte ya que se utilizó la herramienta de doxygen que
+ trabaja con javadocs para crear archivos LaTeX/HTML que contienen la informació
+n del proyecto.
+ 
+\end_layout
+
+\begin_layout Section
+Conclusiones y recomendaciones
+\end_layout
+
+\begin_layout Standard
+Todos los trozos tuvieron resultados satisfactorios ya que se implementaron
+ correctamente y sin ningún problema que impidiera su correcto funcionamiento.
+ Se utilizó la librería OpenCV para la manipulación de las imágenes y numpy
+ para los cálculos matemáticos complejos.
+ Al programa le faltan más requerimientos por ser implementados, los cuales
+ se realizarán en las siguientes entregas por realizar.
+ Durante el desarrollo de los trozos se presentaron algunos problemas los
+ cuales se mencionan a continuación:
+\end_layout
+
+\begin_layout Standard
+\noindent
+Windows 10 y Django: 
+\end_layout
+
+\begin_layout Itemize
+Problema: Se descubrió que en Windows 10 surgen errores cuando se quiere
+ trabajar desde el cmd ya que no reconoce Django con el error de que Django
+ no está instalado a pesar de que sí lo esté.
+\end_layout
+
+\begin_layout Itemize
+Resolución: Luego de tratar de arreglar el error para seguir trabajando
+ desde el cmd se logró encontrar otra alternativa que Eclipse brindaba.
+ Eclipse tiene la opción de ejecutar los mismos comandos que se usarían
+ en el cmd solo que desde Eclipse no se generaba ningún problema.
+ 
+\end_layout
+
+\begin_layout Standard
+CSS y JS: 
+\end_layout
+
+\begin_layout Itemize
+Problema: Al inicio se desconocía que Django no leía los documentos .html
+ como se leen usualmente en el desarrollo web.
+ 
+\end_layout
+
+\begin_layout Itemize
+Resolución: Se hizo una investigación para averiguar la sintaxis correcta
+ para incluir los archivos css y js.
+\end_layout
+
+\begin_layout Standard
+Lyx:
+\end_layout
+
+\begin_layout Itemize
+Problema: Cuando se abrió el programa por segunda vez empezó a mostrar mensajes
+ de que habían módulos que no se encontraban y cada cierto tiempo volvía
+ a mostrar el mismo error, además a algunos integrantes del grupo les presento
+ problemas abrir el documento en el que se estaba trabajando, ya que LyX
+ indicaba de que no se pudieron encontrar ciertos archivos necesarios para
+ la ejecución.
+ Dicho problema imposibilitó que todos los integrantes pudieran trabajar
+ en el documento.
+ 
+\end_layout
+
+\begin_layout Itemize
+Resolución: Se decidió que los que no podían abrir el documento del todo
+ pasaran la información por aparte y que el que si podía abrir el documento
+ agregara dicha información.
+ El error del mensaje constante de los módulos no encontrados no se pudo
+ solucionar pero dicho problema no impidió que se trabajara en el documento.
+\end_layout
+
+\begin_layout Standard
+OpenCV
+\end_layout
+
+\begin_layout Itemize
+Problema: A pesar de que todos los integrantes del grupo instalaron la misma
+ versión de OpenCV (3.1.0), no a todos les funcionaba correctamente, provocando
+ que no todos pudieran probar el programa completo
+\end_layout
+
+\begin_layout Itemize
+Resolución: A los que sí les funcionaba OpenCV correctamente les tocó asegurarse
+ de que lo que los otros integrantes programaban sirviera correctamente.
+\end_layout
+
+\end_body
+\end_document
