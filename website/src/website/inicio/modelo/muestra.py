@@ -1,10 +1,12 @@
-
 import numpy as np
 import numpy.linalg as linalg
 import cv2
 import os 
 
 class muestra:
+    '''
+    Encargada de representar y realizar calculos sobre las muestras 
+    '''
     
     def __init__(self):
         
@@ -15,6 +17,9 @@ class muestra:
         self.autovectores=[]
     
     def generarMatriz(self):
+        '''
+        Genera matriz de imagenes vectorizadas de cada sujeto
+        '''
         
         for i in self.sujetos[0].imagenes[0].vector:
             self.matriz.append([])
@@ -29,18 +34,31 @@ class muestra:
         self.matrizCovarianza=np.cov(self.matriz)
         
     def generarMatrizCovarianza(self):
+        '''
+        Generacion de la matriz de covarianza para la definicion de informacion
+        relevante para los calculos
+        '''
+        
+        
         m=np.array(self.matriz)
+        
+        
+        print(m)
+        print(len(m))
+        print(len(m[0]))
         promedios=[]
+        print("Promedios")
         for i in range(len(m)):
             promedios.append(np.mean(m[i]))
             self.matrizCovarianza.append([])
           
         resultado=0
+        print("Calculos")
         for i in range(1,len(m)+1):
-            
+            print("i=",i)
             self.matrizCovarianza[i-1].append((1/(len(m)))*np.sum((promedios[i-1]-m[i-1])**2))
             for j in range(i,len(m)):
-
+                #print("j=",j)
                 resultado=(1/(len(m)))*np.sum((promedios[i-1]-m[i-1])*(promedios[j]-m[j]))
                 self.matrizCovarianza[i-1].append(resultado)
                 self.matrizCovarianza[j].append(resultado)
@@ -51,6 +69,9 @@ class muestra:
   
         
     def calcularAutovalores(self):
+        '''
+        Calcula los autovalores utilizando la matriz de covarianza.
+        '''
         self.autovalores = linalg.eig(np.matrix(self.matrizCovarianza))
         
     
