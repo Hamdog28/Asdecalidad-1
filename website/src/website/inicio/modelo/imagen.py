@@ -26,12 +26,11 @@ class imagen:
             self.vector=np.concatenate((self.vector,i),axis=0)
         
 
-    def leerImagenes(self,nombre_archivo,directorio):
+    def leerImagenes(self,nombre_archivo):
         '''
-        Lee una imagen con un nombre de archivo dado en un directorio dado.
+        Lee una imagen con un nombre de archivo dado en el directorio local.
         Invoca al metodo que vectoriza la imagen.
         :param nombre_archivo:
-        :param directorio:
         '''
            
         self.img = cv2.imread(self.directorio+"/"+nombre_archivo)
