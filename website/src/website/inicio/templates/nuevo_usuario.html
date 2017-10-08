@@ -33,7 +33,7 @@ Although you can use them, for a more unique website, replace these images with 
     
 </head>
 
-<body>
+<body onload="myFunction()">
 	
     <!-- Navigation -->
     <nav id="siteNav" class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -54,11 +54,11 @@ Although you can use them, for a more unique website, replace these images with 
             <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active">
-                        <a href="#">Inicio</a>
+                    <li >
+                        <a href="/inicio">Inicio</a>
                     </li>
-                    <li>
-                        <a href="/inicio/nuevo">Nuevo Usuario</a>
+                    <li class="active">
+                        <a href="#">Nuevo Usuario</a>
                     </li>
 					
                     <li>
@@ -72,15 +72,57 @@ Although you can use them, for a more unique website, replace these images with 
 
 	<!-- Header -->
     <header>
-    <form action="/inicio/imagen" method="POST" enctype="multipart/form-data">
+    <form action="/inicio/usuario" method="POST" enctype="multipart/form-data" >
     {% csrf_token %}
-        <div class="header-content">
+        <br><br><br><br>
+        <div class="container" style="background-color: rgba(110, 110, 110, 0.5); border-radius: 5px; width:850px">
             <div class="header-content-inner">
-                <h1>Sistema de reconocimiento facial</h1>
-                <p>Seleccione la imagen para el reconocimiento facial</p>
-                <input id="input-1a" type="file" class="file" data-show-preview="false" name="file" id="file" required>
+                <h1>Nuevo usuario</h1>
+                <p>Ingrese la información respectiva para el nuevo usuario</p>
+                
+                <div class="row">
+ 					<div class="container" align="left" style="width:700px">
+	                	<label>Nombre</label>
+		            	<input id="input-1a" type="text" class="form-control" data-show-preview="false" name="nombre" id="nombre" required><br>
+                	
+                
+                
+                
+	                <label>Primera imagen</label>
+	                <input id="input-1a" type="file" class="file" data-show-preview="false" name="file1" id="file1" required><br>
+	                
+	                <label>Segunda imagen</label>
+	                <input id="input-1a" type="file" class="file" data-show-preview="false" name="file2" id="file2" required><br>
+	                
+	                <label>Tercera imagen</label>
+	                <input id="input-1a" type="file" class="file" data-show-preview="false" name="file3" id="file3" required><br>
+	                
+	                <label>Cuarta imagen</label>
+	                <input id="input-1a" type="file" class="file" data-show-preview="false" name="file4" id="file4" required><br>
+	                
+	                <label>Quinta imagen</label>
+	                <input id="input-1a" type="file" class="file" data-show-preview="false" name="file5" id="file5" required><br>
+	                
+	                <label>Sexta imagen</label>
+	                <input id="input-1a" type="file" class="file" data-show-preview="false" name="file6" id="file6" required><br>
+	                
+	                <label>Setima imagen</label>
+	                <input id="input-1a" type="file" class="file" data-show-preview="false" name="file7" id="file7" required><br>
+	                
+	                <label>Octava imagen</label>
+	                <input id="input-1a" type="file" class="file" data-show-preview="false" name="file8" id="file8" required><br>
+	                
+	                <label>Novena imagen</label>
+	                <input id="input-1a" type="file" class="file" data-show-preview="false" name="file9" id="file9" required><br>
+	                
+	                <label>Decima imagen</label>
+	                <input id="input-1a" type="file" class="file" data-show-preview="false" name="file10" id="file10" required><br>
+                <br>
             </div>
         </div>
+        </div>
+                </div>
+        <br><br>
     </form>
     </header>
 
@@ -119,7 +161,18 @@ Although you can use them, for a more unique website, replace these images with 
     
     <!-- Custom Javascript -->
     <script src="{% static 'js/custom.js' %}"></script>
-	
+	<script>
+	function myFunction() {
+	    var txt;
+	    var person = prompt("Ingrese la contraseña de administrador:", "");
+	    if (person != "1234") {
+	    	alert("Contraseña incorrecta");
+	    	window.location.replace("/inicio");
+	    } else {
+	    	alert("Bienvenido");
+	    }
+	}
+	</script>
 </body>
 
 </html>
