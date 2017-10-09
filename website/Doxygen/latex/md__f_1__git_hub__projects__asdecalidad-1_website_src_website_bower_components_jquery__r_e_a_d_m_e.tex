@@ -1,0 +1,78 @@
+\begin{quote}
+j\+Query is a fast, small, and feature-\/rich Java\+Script library. \end{quote}
+
+
+For information on how to get started and how to use j\+Query, please see \href{http://api.jquery.com/}{\tt j\+Query\textquotesingle{}s documentation}. For source files and issues, please visit the \href{https://github.com/jquery/jquery}{\tt j\+Query repo}.
+
+If upgrading, please see the \href{https://blog.jquery.com/2017/03/20/jquery-3-2-1-now-available/}{\tt blog post for 3.\+2.\+1}. This includes notable differences from the previous version and a more readable changelog.
+
+\subsection*{Including j\+Query}
+
+Below are some of the most common ways to include j\+Query.
+
+\subsubsection*{Browser}
+
+\paragraph*{Script tag}
+
+
+\begin{DoxyCode}
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+\end{DoxyCode}
+
+
+\paragraph*{Babel}
+
+\href{http://babeljs.io/}{\tt Babel} is a next generation Java\+Script compiler. One of the features is the ability to use E\+S6/\+E\+S2015 modules now, even though browsers do not yet support this feature natively.
+
+
+\begin{DoxyCode}
+import $ from "jquery";
+\end{DoxyCode}
+
+
+\paragraph*{Browserify/\+Webpack}
+
+There are several ways to use \href{http://browserify.org/}{\tt Browserify} and \href{https://webpack.github.io/}{\tt Webpack}. For more information on using these tools, please refer to the corresponding project\textquotesingle{}s documention. In the script, including j\+Query will usually look like this...
+
+
+\begin{DoxyCode}
+var $ = require("jquery");
+\end{DoxyCode}
+
+
+\paragraph*{A\+MD (Asynchronous Module Definition)}
+
+A\+MD is a module format built for the browser. For more information, we recommend \href{http://requirejs.org/docs/whyamd.html}{\tt require.\+js\textquotesingle{} documentation}.
+
+
+\begin{DoxyCode}
+define(["jquery"], function($) \{
+
+\});
+\end{DoxyCode}
+
+
+\subsubsection*{Node}
+
+To include j\+Query in \href{nodejs.org}{\tt Node}, first install with npm.
+
+
+\begin{DoxyCode}
+npm install jquery
+\end{DoxyCode}
+
+
+For j\+Query to work in Node, a window with a document is required. Since no such window exists natively in Node, one can be mocked by tools such as \href{https://github.com/tmpvar/jsdom}{\tt jsdom}. This can be useful for testing purposes.
+
+
+\begin{DoxyCode}
+require("jsdom").env("", function(err, window) \{
+    if (err) \{
+        console.error(err);
+        return;
+    \}
+
+    var $ = require("jquery")(window);
+\});
+\end{DoxyCode}
+ 
