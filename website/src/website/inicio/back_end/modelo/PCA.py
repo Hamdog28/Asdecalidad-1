@@ -24,7 +24,7 @@ class PCA:
 
     def identificacion_sujetos(self,img):
         clasificacion=DistanciaCentroide(self.muestra)
-        i,j=clasificacion.clasificar(img,self.proyeccion.autoespacio,self.proyeccion.proyecciones)
+        i,j=clasificacion.clasificar(img,self.proyeccion.autocaras,self.proyeccion.proyecciones)
         return i,j
 
     

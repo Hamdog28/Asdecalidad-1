@@ -12,8 +12,8 @@ class Control:
         self.gestor_pca.entrenamiento(self.gestor_muestra.muestra,cantidad_autovectores)
         return None
 
-    def identificacion_sujeto(self,directorio):
-        i,j = self.gestor_pca.identificacion_sujeto(directorio)
+    def identificacion_sujeto(self,img):
+        i,j = self.gestor_pca.identificacion_sujeto(img)
         return i,j
 
     def cargar_imagenes(self,direccion):

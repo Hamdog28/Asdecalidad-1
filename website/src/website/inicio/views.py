@@ -11,7 +11,7 @@ ctl = Control()
 
 def index(request):
     
-    ctl.entrenamiento(85)
+    ctl.entrenamiento(100)
     template = loader.get_template('index.html')
     context={}
     return HttpResponse(template.render(context,request))

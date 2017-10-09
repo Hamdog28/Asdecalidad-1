@@ -9,9 +9,8 @@ class Imagen:
         self.vector = []
 
     def vectorizar(self):
-        for i in cv2.cvtColor(self.img,cv2.COLOR_BGR2GRAY):         
-            self.vector=np.concatenate((self.vector,i),axis=0)
-        return None
+        img = cv2.cvtColor(self.img,cv2.COLOR_BGR2GRAY)
+        self.vector = img.T.flatten().T
 
     def leer_imagen(self,directorio):
         self.img = cv2.imread(directorio)

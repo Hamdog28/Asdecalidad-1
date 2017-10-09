@@ -1,5 +1,4 @@
 import numpy as np
-from numpy.linalg import inv
 
 class Muestra:
     
@@ -23,9 +22,19 @@ class Muestra:
         return None
 
     def generar_matriz_covarianza(self):
-        self.matriz=np.matrix(self.matriz)  
-        self.matriz_covarianza = self.matriz.T * self.matriz
-        self.matriz_covarianza /= self.matriz.shape[1] - 1     
+        self.promedio = np.mean(self.matriz,axis=1,dtype="float64")
+        self.matriz=self.matriz-self.promedio
+        self.matriz_covarianza = np.cov(self.matriz.T)
+       
+        """
+        print(self.matriz.shape)
+        self.promedio = np.mean(self.matriz,axis=1,dtype="float64")
+        #print(self.promedio)
+        matriz_d=np.matrix(self.matriz)-self.promedio 
+        print(matriz_d.shape)
+        self.matriz_covarianza = matriz_d.T * matriz_d
+        self.matriz_covarianza /= self.matriz.shape[1] - 1 
+        """    
         return None
   
     def calcular_autovalores_autovectores(self):
