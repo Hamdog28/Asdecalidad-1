@@ -15,8 +15,8 @@ class GestorPCA:
 
     def identificacion_sujeto(self,img):
 
-        i,j=self.pca.identificacion_sujetos(img)
-        return i,j 
+        valor,sujeto=self.pca.identificacion_sujetos(img)
+        return valor,sujeto 
 
     def pruebas(self):
         return None

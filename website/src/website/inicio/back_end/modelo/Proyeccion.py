@@ -13,13 +13,10 @@ class Proyeccion:
         autovectores = autovectores[0: cantidad_valores]
         self.autocaras = muestra.matriz * autovectores.T
         self.autocaras = self.autocaras / np.linalg.norm(self.autocaras, axis=0)
-        print(self.autocaras.shape)
-        print(muestra.matriz.shape)
         self.proyecciones=self.autocaras.T * muestra.matriz[:,0]
-        print(self.proyecciones.shape)
         for i in range(1,muestra.matriz.shape[1]):
             self.proyecciones = np.concatenate((self.proyecciones,self.autocaras.T * muestra.matriz[:,i]),axis=1)
-        print(self.proyecciones.shape)
+        
         
 
 

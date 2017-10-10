@@ -8,17 +8,19 @@ class DistanciaCentroide:
         self.muestra=muestra
         
     def clasificar(self,img,autocaras,proyecciones):
+        valores_distancias = []
+        sujetos = []
         for i in self.muestra.sujetos:
             imagen = np.matrix(img.vector).T
             i.generar_submatriz()
             imagen = imagen - np.mean(np.matrix(i.submatriz), axis=1)
             imagen_proyectada = autocaras.T * imagen
             distancia = proyecciones - imagen_proyectada
-
             distancia_normalizada = np.linalg.norm(distancia)
-
-            similitud = np.mean(distancia_normalizada)
-            sujeto = i
-            print(sujeto.nombre, similitud)
-        return 1,0
+            valores_distancias.append(np.mean(distancia_normalizada))
+            sujetos.append(i)
+        
+        valor=min(valores_distancias)
+        indice=valores_distancias.index(valor)
+        return valor,sujetos[indice].nombre
         

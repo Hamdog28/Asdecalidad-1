@@ -13,8 +13,8 @@ class Control:
         return None
 
     def identificacion_sujeto(self,img):
-        i,j = self.gestor_pca.identificacion_sujeto(img)
-        return i,j
+        valor,sujeto = self.gestor_pca.identificacion_sujeto(img)
+        return valor,sujeto
 
     def cargar_imagenes(self,direccion):
         self.gestor_muestra.cargar_imagenes(direccion)

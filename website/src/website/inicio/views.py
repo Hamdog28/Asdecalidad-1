@@ -8,10 +8,11 @@ from back_end.modelo.Imagen import Imagen
 from back_end.controlador.Control import Control
 
 ctl = Control()
+ctl.entrenamiento(100)
 
 def index(request):
     
-    ctl.entrenamiento(100)
+    
     template = loader.get_template('index.html')
     context={}
     return HttpResponse(template.render(context,request))
@@ -45,8 +46,8 @@ def upload_file(request):
             handle_uploaded_file(request.FILES['file10'], str(request.FILES['file10']))
             return HttpResponse('<script>function mensaje() {alert("Imagen ingresada con exito"); }mensaje();window.location.replace("http://127.0.0.1:8000/inicio");</script> ')
         except:
-            handle_uploaded_file(request.FILES['file'], str(request.FILES['file']))
-            return HttpResponse('<script>function mensaje() {alert("Imagen ingresada con exito"); }mensaje();window.location.replace("http://127.0.0.1:8000/inicio");</script> ')
+            valor,sujeto=handle_uploaded_file(request.FILES['file'], str(request.FILES['file']))
+            return HttpResponse('<script>function mensaje() {alert("Sujeto '+sujeto+'"); }mensaje();window.location.replace("http://127.0.0.1:8000/inicio");</script> ')
        
         
     return HttpResponse('<script>function mensaje() {alert("Imagen ingresada incorrectaente"); }mensaje();window.location.replace("http://127.0.0.1:8000/inicio");</script> ')
@@ -63,5 +64,5 @@ def handle_uploaded_file(file, filename):
     
     img.leer_imagen('upload/'+filename)
     
-    ctl.identificacion_sujeto(img)
-          
+    valor,sujeto=ctl.identificacion_sujeto(img)
+    return valor,sujeto
