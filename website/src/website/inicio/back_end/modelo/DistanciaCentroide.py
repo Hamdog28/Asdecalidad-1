@@ -5,7 +5,7 @@ class DistanciaCentroide:
 
     def __init__(self,muestra):
         Clasificacion.__init__(self)
-        self.muestra=muestra
+        self.muestra = muestra
         
     def clasificar(self,img,autocaras,proyecciones):
         valores_distancias = []
@@ -20,7 +20,7 @@ class DistanciaCentroide:
             valores_distancias.append(np.mean(distancia_normalizada))
             sujetos.append(i)
         
-        valor=min(valores_distancias)
-        indice=valores_distancias.index(valor)
+        valor = min(valores_distancias)
+        indice = valores_distancias.index(valor)
         return valor,sujetos[indice].nombre
         
