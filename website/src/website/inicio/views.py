@@ -6,6 +6,7 @@ from django.shortcuts import render
 import os 
 from back_end.modelo.Imagen import Imagen
 from back_end.controlador.Control import Control
+from django.template.context_processors import request
 
 ctl = Control()
 ctl.entrenamiento(100)
@@ -50,7 +51,24 @@ def upload_file(request):
         
     return HttpResponse('<script>function mensaje() {alert("Imagen ingresada incorrectaente"); }mensaje();window.location.replace("http://127.0.0.1:8000/inicio");</script> ')
 
- 
+def uploaded_db(request):
+    template = loader.get_template('carga_imagenes.html')
+    context={}
+    if request.method == 'POST':
+        handle_uploaded_folder(request.FILES['file'], str(request.FILES['file']))
+        return HttpResponse(template.render(context,request))
+        
+    return HttpResponse(template.render(context,request))
+
+    
+def handle_uploaded_folder(file, filename):
+    if not os.path.exists('upload/'):
+        os.mkdir('upload/')
+    
+    with open('upload/' + filename, 'wb+') as destination:
+        for chunk in file.chunks():
+            destination.write(chunk)
+            
 def handle_uploaded_file(file, filename):
     if not os.path.exists('upload/'):
         os.mkdir('upload/')
