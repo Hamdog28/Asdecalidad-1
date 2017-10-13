@@ -70,5 +70,13 @@ class testCases(unittest.TestCase):
 
         self.assertEqual(len(gestor.muestra.matrizCovarianza), 10304, "El tamano de la matriz no es el adecuado")
        
+    def testCargarImagenesDeDireccion(self):
+        print("Test5")
+        gestor=gestorMuestra()
+        gestor.cargar()
         
+        #Revisa si se creo la matriz de imagenes.
+        self.assertTrue(gestor.muestra.matriz, "No hay matriz de imagenes")
+    
+    
 unittest.main()
