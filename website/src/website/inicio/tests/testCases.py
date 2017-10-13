@@ -1,8 +1,8 @@
 import unittest
 #import controlador.DAOBDmuestral.DAOBDmuestral
-from modelo.imagen import imagen
-from controlador.gestorMuestra import gestorMuestra
-from controlador.gestorSujetos import gestorSujetos
+from back_end.modelo.Imagen import Imagen
+from back_end.controlador.GestorMuestra import GestorMuestra
+from back_end.controlador.GestorPCA import GestorPCA
 import numpy as np
 
 class testCases(unittest.TestCase):
@@ -11,64 +11,76 @@ class testCases(unittest.TestCase):
     '''
     def testCargarDesdeBD(self):
         print("Test1")
-        gestor=gestorSujetos()
+        gestor=GestorMuestra()
         gestor.cargar()
-        
         #Revisa si se cargaron sujetos
-        self.assertTrue(gestor.lista_sujetos, "Fallo en la carga, los sujetos no fueron cargados")
+        self.assertTrue(gestor.muestra.sujetos, "Fallo en la carga, los sujetos no fueron cargados")
         
         #Revisa por cada sujeto si se cargaron sus fotos
         indice=0
         standardSize=(112,92,3)
-        for sujeto in gestor.lista_sujetos:
-            indice+=1
-            print("Sujeto ",indice)
-            if self.assertTrue(sujeto.imagenes, "Un sujeto no tiene imagenes."):
-                break
+        sujeto = gestor.muestra.sujetos[0]
+        indice+=1
+        print("Sujeto ",indice)
+        self.assertTrue(sujeto.imagenes, "Un sujeto no tiene imagenes.")
+            
             
             #Revisa si las imagenes cumplen con standardSize
-            for imagen in sujeto.imagenes:
-                self.assertEqual(imagen.img.shape, standardSize, "El tamano de la imagen no es valido")
+        for imagen in sujeto.imagenes:
+            self.assertEqual(imagen.img.shape, standardSize, "El tamano de la imagen no es valido")
             
         print(indice," sujetos analizados.")
         
     def testGenerarMatrizImagenes(self):
         print("Test2")
-        gestor=gestorMuestra()
+        gestor=GestorMuestra()
         gestor.cargar()
         
         #Revisa si se creo la matriz de imagenes.
-        self.assertTrue(gestor.muestra.matriz, "No hay matriz de imagenes")
+        self.assertTrue(gestor.muestra.matriz==[], "No hay matriz de imagenes")
         
         
         
         
     def testCambiarTamano(self):
         print("Test3")
-        gestor=gestorSujetos()
+        gestor=GestorMuestra()
         
-        gestor.cargar()
-        for sujeto in gestor.lista_sujetos:
-            for imagen in sujeto.imagenes:
-                imagenPrueba=imagen
-                tamanoPrueba=(200,100,3)
-                imagenPrueba.cambiarDimensionesImagen(tamanoPrueba[1], tamanoPrueba[0])
-                self.assertEqual(imagenPrueba.img.shape, tamanoPrueba, "El tamano de la imagen (Especifico) no fue cambiado correctamente")
-                tamanoPrueba=(100,50,3)
-                imagenPrueba.cambiarTamanoPorcentualImagen(0.5, 0.5)
-                self.assertEqual(imagenPrueba.img.shape, tamanoPrueba, "El tamano de la imagen (Porcentual) no fue cambiado correctamente")
+        gestor.cargar()   
+        imagenPrueba=gestor.muestra.sujetos[0].imagenes[0]
+        tamanoPrueba=(200,100,3)
+        imagenPrueba.cambiar_dimenciones_imagen(tamanoPrueba[1], tamanoPrueba[0])
+        self.assertEqual(imagenPrueba.img.shape, tamanoPrueba, "El tamano de la imagen (Especifico) no fue cambiado correctamente")
+        tamanoPrueba=(100,50,3)
+        imagenPrueba.cambiar_tamano_porcentual_imagen(0.5, 0.5)
+        self.assertEqual(imagenPrueba.img.shape, tamanoPrueba, "El tamano de la imagen (Porcentual) no fue cambiado correctamente")
                 
         print("")
 
     def testMatrizCovarianza(self):
         print("Test4")
-        gestor=gestorMuestra()
+        gestor=GestorMuestra()
         gestor.cargar()#Tambien genera la muestra 
-        gestor.muestra.generarMatrizCovarianza2() #20 segundos aprox
-        
-        self.assertTrue(gestor.muestra.matrizCovarianza.any(), "No se creo matriz de covarianza")
-
-        self.assertEqual(len(gestor.muestra.matrizCovarianza), 10304, "El tamano de la matriz no es el adecuado")
+        gestor.muestra.generar_matriz()
+        gestor.muestra.generar_matriz_covarianza() #20 segundos aprox
+        self.assertEqual(len(gestor.muestra.matriz_covarianza) , 410, "El tamano de la matriz no es el adecuado")
        
         
-unittest.main()
+    def testEntrenamiento(self):
+        print("Test5")
+        gestor=GestorMuestra()
+        gestor_pca=GestorPCA()
+        gestor.cargar()#Tambien genera la muestra 
+        gestor.muestra.generar_matriz()
+        gestor.muestra.generar_matriz_covarianza() #20 segundos aprox
+        gestor.muestra.calcular_autovalores_autovectores()
+        self.assertEqual(len(gestor.muestra.matriz_covarianza) , 410, "El tamano de la matriz no es el adecuado")
+        gestor_pca.pca.agregar_muestra(gestor.muestra)
+        valor=gestor_pca.pca.entrenamiento(80)
+        gestor_pca.dao_db_pca.guardar(gestor_pca.pca.proyeccion)
+        self.assertTrue(valor, "Error entrenamiento")
+
+       
+        
+if __name__ == '__main__':
+    unittest.main()
