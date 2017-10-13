@@ -104,6 +104,18 @@ class testCases(unittest.TestCase):
         gestor_pca=GestorPCA()
         gestor_pca.pruebas()
        
+    def testCargarImagenesDeDireccion(self):
+        print("Test5")
+        gestor=gestorMuestra()
+        gestor.cargar()
         
+<<<<<<< HEAD
 if __name__ == '__main__':
     unittest.main()
+=======
+        #Revisa si se creo la matriz de imagenes.
+        self.assertTrue(gestor.muestra.matriz, "No hay matriz de imagenes")
+    
+    
+unittest.main()
+>>>>>>> d9d7ea7f426aac9a19790aa79f2f33e26ced0e0a
