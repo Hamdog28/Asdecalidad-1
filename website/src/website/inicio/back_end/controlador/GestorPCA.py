@@ -9,7 +9,7 @@ from ..modelo.PCA import PCA
 from ..modelo.Imagen import Imagen
 from .DaoBDMuestral import DaoDBMuestral
 from ..modelo.Sujeto import Sujeto
-
+from .DaoBDMuestral import DaoDBMuestral
 class GestorPCA:
     
     def __init__(self):
@@ -59,19 +59,20 @@ class GestorPCA:
         """
         muestra = Muestra()
         pca = PCA()
+        BDmuestral = DaoDBMuestral()
 
-        nombres_carpetas = self.BDmuestral.leer_carpetas()
+        nombres_carpetas = BDmuestral.leer_carpetas()
         lista_sujetos = []
         lista_sujetos_prueba = []
         for i in nombres_carpetas:
             s=Sujeto(i)
             s_p=Sujeto(i)
-            s.imagenes = self.BDmuestral.leer_imagenes(i)
+            s.imagenes = BDmuestral.leer_imagenes(i)
             sujetos=len(s.imagenes)
             numero_sujetos=int(sujetos*Configuracion.PORCENTAJE_PRUEBA/100)
             imagen_prueba = []
             for j in range(numero_sujetos):
-                quitar=random(0,len(s.imagenes)-1)
+                quitar=random.randrange(0,len(s.imagenes)-1)
                 img=s.imagenes.pop(quitar)
                 imagen_prueba.append(img)
             s_p.imagenes = imagen_prueba

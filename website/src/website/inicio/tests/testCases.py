@@ -3,6 +3,7 @@ import unittest
 from back_end.modelo.Imagen import Imagen
 from back_end.controlador.GestorMuestra import GestorMuestra
 from back_end.controlador.GestorPCA import GestorPCA
+from back_end.controlador.Configuracion import Configuracion
 import numpy as np
 
 class testCases(unittest.TestCase):
@@ -80,6 +81,28 @@ class testCases(unittest.TestCase):
         gestor_pca.dao_db_pca.guardar(gestor_pca.pca.proyeccion)
         self.assertTrue(valor, "Error entrenamiento")
 
+    def testIdentificacion(self):
+        print("Test6")
+        gestor=GestorMuestra()
+        gestor_pca=GestorPCA()
+        gestor.cargar()#Tambien genera la muestra 
+        gestor.muestra.generar_matriz()
+        gestor.muestra.generar_matriz_covarianza() #20 segundos aprox
+        gestor.muestra.calcular_autovalores_autovectores()
+        self.assertEqual(len(gestor.muestra.matriz_covarianza) , 410, "El tamano de la matriz no es el adecuado")
+        gestor_pca.pca.agregar_muestra(gestor.muestra)
+        valor=gestor_pca.pca.entrenamiento(80)
+        gestor_pca.dao_db_pca.guardar(gestor_pca.pca.proyeccion)
+        self.assertTrue(valor, "Error entrenamiento")
+        img=Imagen([])
+        img.leer_imagen(Configuracion.RUTA_2+"/otros/1.pgm")
+        valor,sujeto =  gestor_pca.pca.identificacion_sujetos(img)
+        print("El sujeto identificado es "+sujeto)
+        
+    def testPruebas(self):
+        print("Test7")
+        gestor_pca=GestorPCA()
+        gestor_pca.pruebas()
        
         
 if __name__ == '__main__':
