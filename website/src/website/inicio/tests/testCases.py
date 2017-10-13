@@ -70,5 +70,21 @@ class testCases(unittest.TestCase):
 
         self.assertEqual(len(gestor.muestra.matrizCovarianza), 10304, "El tamano de la matriz no es el adecuado")
        
+    def testEntrenarSistema(self):
+        print("Test5")        
+        
+    def testCargarImagenesDireccion(self):
+        print("Test6")
+        
+    def testCargarConjuntoMuestra(self):
+        print("Test7")
+        gestor = gestorMuestra()
+        
+        gestor.cargar()
+        
+        self.assertTrue(gestor.cargar(), "No cargó el conjunto de imágenes")
         
 unittest.main()
+
+#if name == 'main':
+#        unittest.main()
