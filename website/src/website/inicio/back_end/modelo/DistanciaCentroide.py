@@ -46,7 +46,7 @@ class DistanciaCentroide:
         435769.09093
         
         """
-        if valor< 400000:
+        if valor > 400000:
             return valor,sujetos[indice].nombre
         else:
             return valor,"no identificado"
