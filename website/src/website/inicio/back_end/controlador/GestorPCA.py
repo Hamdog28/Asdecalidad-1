@@ -1,10 +1,15 @@
 import cv2
-import os 
+import os
+import numpy as np
+import random 
 from .Configuracion import Configuracion
 from .DaoBDPCA import DaoDBPCA
 from ..modelo.Muestra import Muestra
 from ..modelo.PCA import PCA
 from ..modelo.Imagen import Imagen
+from .DaoBDMuestral import DaoDBMuestral
+from ..modelo.Sujeto import Sujeto
+
 class GestorPCA:
     
     def __init__(self):
@@ -55,14 +60,40 @@ class GestorPCA:
         muestra = Muestra()
         pca = PCA()
 
-        
-        
-        nombres_archivos = os.listdir(Configuracion.RUTA_2+"/otros")        
-        for nombre_archivo in nombres_archivos:
-            img = cv2.imread(Configuracion.RUTA_2+"/otros/"+nombre_archivo)
-            i = Imagen(img)
-            i.vectorizar()
-            self.pca.identificacion_sujetos(img)
+        nombres_carpetas = self.BDmuestral.leer_carpetas()
+        lista_sujetos = []
+        lista_sujetos_prueba = []
+        for i in nombres_carpetas:
+            s=Sujeto(i)
+            s_p=Sujeto(i)
+            s.imagenes = self.BDmuestral.leer_imagenes(i)
+            sujetos=len(s.imagenes)
+            numero_sujetos=int(sujetos*Configuracion.PORCENTAJE_PRUEBA/100)
+            imagen_prueba = []
+            for j in range(numero_sujetos):
+                quitar=random(0,len(s.imagenes)-1)
+                img=s.imagenes.pop(quitar)
+                imagen_prueba.append(img)
+            s_p.imagenes = imagen_prueba
+            lista_sujetos_prueba.append(s_p)
+            lista_sujetos.append(s)
+        muestra.sujetos=lista_sujetos
+        pca.agregar_muestra(muestra)
+        pca.entrenamiento(Configuracion.CANTIDAD_AUTOVECTORES)
+        fp_fn = []
+        indice = 0
+        for x in lista_sujetos_prueba:
+            fp_fn.append([0,0])
+            for y in x.imagenes:
+                valor,sujeto = pca.identificacion_sujetos(y)
+                if sujeto==x.nombre:
+                    fp_fn[indice][0]= fp_fn[indice][0]+1
+                else:
+                    fp_fn[indice][1]= fp_fn[indice][1]+1
+            indice=indice+1
+        m_fp_fn = np.matrix(fp_fn)
+        np.savetxt(Configuracion.RUTA_2+'/fp_fn.csv', m_fp_fn, delimiter=",")
+                    
             
         
         return None

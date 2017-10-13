@@ -61,5 +61,6 @@ class PCA:
         valor,sujeto=clasificacion.clasificar(img,self.proyeccion.autocaras,self.proyeccion.proyecciones)
         return valor,sujeto
 
+
     
     

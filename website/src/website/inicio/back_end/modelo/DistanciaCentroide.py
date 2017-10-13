@@ -50,3 +50,4 @@ class DistanciaCentroide:
             return valor,sujetos[indice].nombre
         else:
             return valor,"no identificado"
+        
