@@ -1,3 +1,4 @@
+import numpy as np
 from .Configuracion import Configuracion
 
 class DaoDBPCA:
@@ -15,7 +16,7 @@ class DaoDBPCA:
         """
         return None
 
-    def guardar(self):
+    def guardar(self,datos):
         """
         guardar
         @details guarda la informacion del entrenamiento
@@ -23,4 +24,7 @@ class DaoDBPCA:
         @rtype: None
         @return: None 
         """
+        np.savetxt(Configuracion.RUTA_2+'/autocaras.csv', datos.autocaras, delimiter=",")
+        np.savetxt(Configuracion.RUTA_2+'/proyecciones.csv', datos.proyecciones, delimiter=",")
+
         return None
