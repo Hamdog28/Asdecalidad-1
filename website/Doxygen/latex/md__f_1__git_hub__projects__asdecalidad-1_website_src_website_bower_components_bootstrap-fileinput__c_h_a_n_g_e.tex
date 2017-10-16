@@ -1,0 +1,1150 @@
+\subsection*{version 4.\+4.\+2 ({\itshape under development})}
+
+{\bfseries Date\+:} 24-\/\+Jun-\/2017
+
+
+\begin{DoxyItemize}
+\item (enh \#1005)\+: Update Dutch Translations.
+\item (enh \#1004)\+: New Krajee Explorer Font Awesome Theme.
+\item (bug \#995)\+: Correct and fix image load jquery event triggering for browser cache scenarios.
+\item (enh \#991)\+: Add Azerbaijan Translations.
+\item (enh \#990)\+: Ability to hide thumbnail content ({\ttfamily hide\+Thumbnail\+Content}) and display only file name/size.
+\item (enh \#989)\+: Update Chinese Translations.
+\item (enh \#987)\+: Zoom preview arrows orientation for R\+TL.
+\item (enh \#986)\+: Image width parsing and styling enhancements.
+\item (enh \#985)\+: Do not reset input when upload fails (single-\/upload mode).
+\item (enh \#981)\+: Update Hungarian Translations.
+\item (enh \#977)\+: Add R\+TL capability (new property {\ttfamily rtl} to be set) -\/ includes new {\ttfamily fileinput-\/rtl.\+css} (to be loaded after {\ttfamily fileinput.\+css} for R\+TL styling).
+\item (enh \#973)\+: Add S\+C\+SS image path variable and file-\/image alt style updates.
+\end{DoxyItemize}
+
+\subsection*{version 4.\+4.\+1}
+
+{\bfseries Date\+:} 25-\/\+May-\/2017
+
+
+\begin{DoxyItemize}
+\item (enh \#980)\+: Add new method {\ttfamily get\+Frames} to get all thumbnail frames as j\+Query objects.
+\item (enh \#979)\+: Add new method {\ttfamily get\+Exif} to retrieve exif data for a selected jpeg image.
+\item (enh \#978, \#974)\+: Implement exif restoration for resized images via \href{https://github.com/hMatoba/piexifjs}{\tt {\ttfamily piexif} plugin}.
+\item (enh \#968)\+: Update Turkish Translations.
+\item (enh \#967)\+: Correct file caption display for ajax upload mode when {\ttfamily show\+Preview} is {\ttfamily false}.
+\end{DoxyItemize}
+
+\subsection*{version 4.\+4.\+0}
+
+{\bfseries Date\+:} 13-\/\+May-\/2017
+
+
+\begin{DoxyItemize}
+\item (enh \#966)\+: Add Estonian Translations.
+\item (enh \#965)\+: New {\ttfamily required} and {\ttfamily msg\+File\+Required} properties.
+\item (bug \#958)\+: Create {\ttfamily set\+Tokens} string helper for easier replacement of tokens.
+\item (bug \#956)\+: Correct initial preview file thumb deletions.
+\item (bug \#955)\+: Remove unnecessary {\ttfamily source\+Mapping\+Url} in {\ttfamily purify.\+min.\+js}.
+\item (enh \#954)\+: Add minified theme assets.
+\item (enh \#952)\+: Auto orientation of image based on E\+X\+IF data (new property {\ttfamily auto\+Orient\+Image}).
+\item (enh \#950, \#930)\+: Add responsive support for Krajee Explorer theme for mobile devices.
+\item (enh \#949)\+: Sortable plugin enhancements and prevent scroll when dragging on mobile devices.
+\item Chronological ordering of issues for change log.
+\item (enh \#947)\+: Correct {\ttfamily show\+Delete} validation in {\ttfamily file\+Action\+Settings}.
+\item (enh \#946)\+: Enhance iconic preview validation to ignore extension case if possible.
+\item (enh \#944)\+: Publish v4.\+3.\+9 release to N\+PM.
+\item (enh \#942)\+: Enhance indicator and drag templates. New layout template {\ttfamily indicator}.
+\item (enh \#941)\+: Correct {\ttfamily data-\/fileindex} validation.
+\item (bug \#940)\+: Correct validation of {\ttfamily initial\+Preview\+Show\+Delete}.
+\item (enh \#936)\+: Enhance custom validation when ajax abort is triggered via event manipulation.
+\item (enh \#934)\+: Update Russian translations.
+\item (enh \#929)\+: Add Norwegian translations.
+\item (enh \#926)\+: Add Galician translations and update Spanish translations.
+\item (enh \#924)\+: Update Farsi Translations.
+\item (enh \#921)\+: Enhance zoom preview slide-\/show to show loading indicator during image change.
+\item (enh \#920)\+: Cancel ajax abort action more correctly.
+\item (bug \#919)\+: Fix resize validation.
+\item Parse all numeric properties correctly.
+\item (enh \#915)\+: Update default styling for zoom preview for object.
+\item (enh \#910)\+: New property {\ttfamily resize\+If\+More\+Than} to control image resize conditionally.
+\item (bug \#899)\+: Fix multiple file selection for non-\/ajax scenario.
+\item (enh \#477)\+: Enhance and correct I\+E10 fileinput click misbehavior.
+\end{DoxyItemize}
+
+\subsection*{version 4.\+3.\+9}
+
+{\bfseries Date\+:} 02-\/\+Apr-\/2017
+
+
+\begin{DoxyItemize}
+\item (enh \#914)\+: Update Portuguese BR translations.
+\item (enh \#913)\+: Better id parsing and resetting of uploaded file thumbnails.
+\item Enhance zoom preview styling for Krajee Explorer theme.
+\item More correct validation of {\ttfamily allowed\+File\+Types} to accept null values.
+\item (enh \#909)\+: Update German Translations.
+\item (enh \#906)\+: Add Swedish Translations.
+\item (enh \#905)\+: Prevent duplicate files to be dragged and dropped.
+\item (enh \#902)\+: Enhance zoom preview styling for large height images.
+\item (bug \#900)\+: Correct {\ttfamily overwrite\+Initial} validation for async batch uploads returning dynamic initial preview post upload.
+\item (enh \#898)\+: New plugin method to get files in preview and config.
+\item (enh \#894, \#895)\+: Correct file size validation for empty files.
+\item (bug \#893)\+: Correct {\ttfamily file-\/success-\/remove} event handling.
+\item (bug \#890)\+: Fix doubling of images for async bulk uploads when initial preview is returned via ajax response.
+\item Enhance uploaded thumb frames to not reset or change the frame identifier after successful upload.
+\item (enh \#887)\+: New properties {\ttfamily msg\+Upload\+Begin} and {\ttfamily msg\+Upload\+End} to display a better progress status. The {\ttfamily layout\+Templates.\+progress} will support a new token {\ttfamily \{status\}}.
+\item Enhance events like {\ttfamily fileclear} and {\ttfamily filepreajax} to be aborted via {\ttfamily event.\+prevent\+Default()}.
+\item (enh \#886)\+: Append zoom modal dialog to {\ttfamily body} element if available to avoid multiple BS modals conflict.
+\item (bug \#885)\+: Correct validation for {\ttfamily allowed\+File\+Types}.
+\item (enh \#875)\+: Reset form based events more correctly to allow multiple bootstrap file inputs within forms.
+\item (bug \#882)\+: Correct image resize validation.
+\item (enh \#881)\+: Update Spanish Translations.
+\item (enh \#863)\+: New plugin method {\ttfamily zoom} with parameter {\ttfamily frame\+Id} to allow custom triggering of zoomed preview for each thumbnail frame.
+\end{DoxyItemize}
+
+\subsection*{version 4.\+3.\+8}
+
+{\bfseries Date\+:} 21-\/\+Feb-\/2017
+
+
+\begin{DoxyItemize}
+\item (enh \#879)\+: Update Russian Translations.
+\item (enh \#876)\+: Update Spanish Translations.
+\item (enh \#874)\+: Enhance/\+Standardize C\+SS Styles for Krajee Default Theme.
+\item (bug \#872)\+: Correct typo in {\ttfamily bootstrap.\+min.\+css}.
+\item (bug \#870)\+: Correct config.\+width parsing.
+\end{DoxyItemize}
+
+\subsection*{version 4.\+3.\+7}
+
+{\bfseries Date\+:} 11-\/\+Feb-\/2017
+
+
+\begin{DoxyItemize}
+\item (enh \#862)\+: Launch a brand new Krajee theme\+: {\ttfamily explorer}.
+\item (enh \#861)\+: New properties within {\ttfamily layout\+Templates}.
+\item (enh \#860)\+: Initialize template defaults in a better manner.
+\item (enh \#859)\+: Enhance and revamp preview caching.
+\item (enh \#858)\+: Thumb Frame C\+SS class as configurable property.
+\item (enh \#857)\+: Default error handling for unknown ajax errors.
+\item (enh \#854)\+: Better file size calculation and display.
+\item (bug \#852)\+: Ensure {\ttfamily frame\+Class} setting in {\ttfamily initial\+Preview\+Config} is considered.
+\item (enh \#851)\+: Create Kazakh Translations.
+\item (enh \#847)\+: Update German Translations.
+\item (enh \#662, \#725)\+: Enhance preview modal to be appended to body before each zoom action (if {\ttfamily body} tag exists).
+\item (enh \#844)\+: Display zoom preview navigation buttons only when multiple files exist.
+\item (bug \#839)\+: Correct {\ttfamily initial\+Preview} generation and sortable behavior for async uploads.
+\item (enh \#837)\+: Update Czech Translations.
+\item (enh \#835)\+: Update Polish Translations.
+\item (bug \#834)\+: Correct clearing of file preview including zoom cache.
+\item (bug \#833)\+: Correct validation and defaults init for {\ttfamily allowed\+Preview\+Types}.
+\item (enh \#831)\+: Update Finnish Translations.
+\item (enh \#828)\+: Allow drag sort of single uploaded thumbnails with {\ttfamily initial\+Preview} config set (post upload).
+\item (bug \#826)\+: Extend language configuration to consider defaults.
+\item (bug \#825)\+: Correct {\ttfamily fileimagesresized} event triggering.
+\item (enh \#824)\+: Add Korean Translations.
+\item (enh \#823)\+: Correct file indices assignment during validation of images.
+\item (enh \#822)\+: Enhancement for preventing upload when data is empty. New property {\ttfamily msg\+Upload\+Empty} has been incorporated.
+\item (enh \#820)\+: Prevent resize if image is smaller than allowed dimensions.
+\item (bug \#819)\+: Correct init preview auto replace post {\ttfamily upload\+Single} action in thumbnails.
+\item (enh \#816)\+: New property {\ttfamily msg\+File\+Types} to control descriptions/localizations of file types displayed.
+\item (enh \#815)\+: Enhance parsing of thumbnails that are visible in preview (will allow plugin to be initialized in hidden containers like tabs).
+\item (enh \#812)\+: Update Greek Translations.
+\end{DoxyItemize}
+
+\subsection*{version 4.\+3.\+6}
+
+{\bfseries Date\+:} 17-\/\+Dec-\/2016
+
+
+\begin{DoxyItemize}
+\item (enh \#809)\+: Various enhancements for preview control and iconic thumbnails.
+\begin{DoxyItemize}
+\item add ability to control and render different previews for file thumbnails and zoomed preview content
+\item new property {\ttfamily prefer\+Iconic\+Preview} will try to parse the {\ttfamily preview\+File\+Icon\+Settings} and {\ttfamily preview\+File\+Ext\+Settings} to automatically force iconic previews for file thumbnails.
+\item new property {\ttfamily prefer\+Iconic\+Zoom\+Preview} will try to parse the {\ttfamily preview\+File\+Icon\+Settings} and {\ttfamily preview\+File\+Ext\+Settings} to automatically force iconic previews in the zoomed content.
+\item the above properties will be applied and parsed for {\ttfamily initial\+Preview} content as well.
+\end{DoxyItemize}
+\item (enh \#804)\+: Add Slovenian Translations.
+\item (enh \#803)\+: Update Hungarian Translations.
+\item (enh \#802)\+: Allow M\+OV files preview for supported devices and browsers.
+\item (enh \#800)\+: Update Spanish Translations.
+\item (enh \#799)\+: Fix IE memory issue on image load.
+\item (enh \#791)\+: Auto orientation of images based on E\+X\+IF data.
+\item (enh \#788)\+: New validation for minimum file size\+:
+\begin{DoxyItemize}
+\item new property {\ttfamily min\+File\+Size} which validates the minimum file size in KB for upload, else throws a validation error using {\ttfamily msg\+Size\+Too\+Small}. This defaults to {\ttfamily 0}.
+\item if {\ttfamily min\+File\+Size} is set to {\ttfamily null}, then above validation is skipped and no minimum file size check is performed.
+\end{DoxyItemize}
+\item (enh \#782)\+: New validation for invalid slug file name (caption)\+:
+\begin{DoxyItemize}
+\item if slug callback returns an empty string, then an error will be thrown using {\ttfamily msg\+Invalid\+File\+Name}.
+\item if slug callback returns {\ttfamily false} then the next file will be read and current file skipped.
+\end{DoxyItemize}
+\item (enh \#779, \#789)\+: More correct thumbnail identification post rearrange.
+\item (enh \#769, \#785, \#786, \#787)\+: Better image resized event handling.
+\item (enh \#771)\+: Update Chinese Translations.
+\item (enh \#764)\+: Update Russian Translations.
+\item (enh \#696)\+: Better default preview zoom settings.
+\end{DoxyItemize}
+
+\subsection*{version 4.\+3.\+5}
+
+{\bfseries Date\+:} 20-\/\+Sep-\/2016
+
+
+\begin{DoxyItemize}
+\item (bug \#758)\+: Correct file slug name parsing for an invalid file extension.
+\item (bug \#753)\+: Correct I\+E11 file clear bug when using without ajax.
+\item (enh \#745)\+: Update Russian Translations.
+\item (enh \#741)\+: Update Vietnamese Translations.
+\item (enh \#736)\+: Update Portugese Brazilian Translations.
+\item (bug \#734)\+: Correct right parsing of {\ttfamily fileuploaded} event params.
+\end{DoxyItemize}
+
+\subsection*{version 4.\+3.\+4}
+
+{\bfseries Date\+:} 07-\/\+Aug-\/2016
+
+
+\begin{DoxyItemize}
+\item (enh \#731)\+: New method {\ttfamily get\+Files\+Count} for returning upl + non-\/upl files count.
+\item (enh \#730)\+: Correct Romanian Translations.
+\item (enh \#729)\+: Implement {\ttfamily progress\+Upload\+Threshold} to show processing when waiting for server response.
+\item (enh \#728)\+: Change sortable plugin name to avoid conflict with J\+UI Sortable.
+\item (bug \#722)\+: Correctly concat ajax output in initial preview.
+\item (enh \#721)\+: Update Turkish Translations.
+\item (enh \#719)\+: Pass right {\ttfamily preview\+Id} to {\ttfamily fileuploaded} event.
+\item (enh \#718)\+: Update Japanese Translations.
+\item (enh \#715)\+: Reset caption correctly on clear.
+\item Add contribution templates.
+\item (bug \#710)\+: Fix bug for {\ttfamily if\+Set} validation.
+\end{DoxyItemize}
+
+\subsection*{version 4.\+3.\+3}
+
+{\bfseries Date\+:} 09-\/\+Jul-\/2016
+
+
+\begin{DoxyItemize}
+\item (enh \#706)\+: Remove invalid files from filestack correctly for validation errors.
+\item (enh \#704)\+: Add grammatically correct \char`\"{}\+No files selected\char`\"{} message.
+\item (enh \#702)\+: Add files to stack correctly for max \& min preview size validation.
+\item (bug \#700)\+: Fix custom preview icons to be displayed and validated correctly.
+\item (enh \#698)\+: Re-\/enable drag and drop support for IE Edge.
+\item (enh \#695)\+: Update Spanish Translations.
+\item (enh \#680)\+: Populate filestack for files greater than max\+File\+Preview\+Size.
+\end{DoxyItemize}
+
+\subsection*{version 4.\+3.\+2}
+
+{\bfseries Date\+:} 11-\/\+Jun-\/2016
+
+
+\begin{DoxyItemize}
+\item (enh \#674)\+: Organize all themes in a separate {\ttfamily themes} folder.
+\item (enh \#666)\+: Update sortable draggable selector.
+\item (enh \#655)\+: Include sass styling configuration.
+\item (enh \#654)\+: Update Spanish Translations.
+\item (enh \#650, \#676)\+: Ability to configure browse button display and file select via zone click.
+\begin{DoxyItemize}
+\item New boolean property {\ttfamily show\+Browse} that allows you to control the display of the browse button
+\item New boolean property {\ttfamily browse\+On\+Zone\+Click} that allows you to select a file\+:
+\begin{DoxyItemize}
+\item {\bfseries for ajax uploads} -\/ by clicking on the preview drag/drop zone
+\item {\bfseries for form based/non-\/ajax uploads} -\/ by setting {\ttfamily default\+Preview\+Content} and that will be clickable to browse files
+\end{DoxyItemize}
+\item New string message property {\ttfamily drop\+Zone\+Click\+Title} that will be appended to the {\ttfamily drag\+Zone\+Title} for ajax uploads when {\ttfamily browse\+On\+Zone\+Click} is {\ttfamily true}.
+\item New template {\ttfamily action\+Drag} will be available within {\ttfamily layout\+Templates} to configure your drag indicator markup.
+\end{DoxyItemize}
+\item (enh \#647)\+: Display file size in previews and templates.
+\item Enhancements to file preview icons ({\ttfamily other} template).
+\item Simpler naming for files in locales and themes folders.
+\item (enh \#643)\+:Implement rearranging / sorting functionality for initial preview.
+\begin{DoxyItemize}
+\item Add ability to rearrange and sort thumbnails by drag \& drop. This feature will use the \href{https://github.com/RubaXa/Sortable}{\tt Sortable plugin} which will be included in the {\ttfamily js/plugins} folder.
+\item This feature will be available only for {\bfseries initial preview thumbnails} for both ajax and form uploads.
+\item New property for drag indicator and drag behavior configurations will be included in {\ttfamily file\+Action\+Settings}\+:
+\begin{DoxyItemize}
+\item {\ttfamily show\+Drag}
+\item {\ttfamily drag\+Icon}
+\item {\ttfamily drag\+Class}
+\item {\ttfamily drag\+Title}
+\item {\ttfamily drag\+Settings}
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item (enh \#642)\+: Reorganize JS code into proper folders. Following folders will be added/maintained
+\begin{DoxyItemize}
+\item {\ttfamily locales}\+: all translation JS files will be located here
+\item {\ttfamily themes}\+: all theme JS files will be located here
+\item {\ttfamily plugins}\+: third party JS plugins that will be used to work with bootstrap-\/fileinput
+\end{DoxyItemize}
+\item (enh \#641)\+: Wrap read\+File(index + 1) in a function to prevent \textquotesingle{}unsafe-\/eval\textquotesingle{} blocking with C\+SP.
+\item (enh \#640)\+: Ability to theme and provide font awesome theme. New property {\ttfamily theme} added.
+\item (enh \#639)\+: Add ability to just require package in nodejs
+\item (enh \#636)\+: File action enhancements.
+\begin{DoxyItemize}
+\item Zoom and Drag buttons will be shown as an additional file action buttons in addition to {\ttfamily upload} and {\ttfamily remove}
+\item New boolean properties {\ttfamily show\+Zoom}, {\ttfamily show\+Drag}, {\ttfamily show\+Remove}, {\ttfamily show\+Upload} are now added to {\ttfamily file\+Action\+Settings} to control display of these buttons
+\item New properties {\ttfamily zoom\+Icon}, {\ttfamily zoom\+Class}, {\ttfamily zoom\+Title} are available within {\ttfamily file\+Action\+Settings} for controlling the zoom button styles and display.
+\item New properties {\ttfamily drag\+Icon}, {\ttfamily drag\+Class}, {\ttfamily drag\+Title} are available within {\ttfamily file\+Action\+Settings} for controlling the drag indicator styles and display.
+\item New properties {\ttfamily action\+Zoom} and {\ttfamily action\+Drag} are available within {\ttfamily layout\+Templates} to configure the markup of the zoom and drag buttons.
+\end{DoxyItemize}
+\item (enh \#635)\+: Various preview enhancements. Previews will be revamped with various functionality\+:
+\begin{DoxyItemize}
+\item Add ability to zoom every thumbnail to a modal preview. So all types of files (images, videos, pdf, text etc) can be previewed in a larger zoom dialog window.
+\item Automatic slideshow like interface for zoom preview modal. One can navigate left or right to view previous or next content in the preview. In addition to button navigation, keyboard navigation (via left/right arrow keys) is also available.
+\item Borderless maximized mode and Full Screen mode available for preview.
+\item Auto disable the previous or next button when the first or last file/image is reached.
+\item Now {\ttfamily initial\+Preview} can be setup M\+O\+RE easier without writing or returning entire markup. Thus the new functionality will enable to use built in {\ttfamily preview\+Templates}.
+\item A new boolean property {\ttfamily initial\+Preview\+As\+Data} is available to control the above. If set to {\ttfamily true}, it will allow developers to now pass just the data within {\ttfamily initial\+Preview} (instead of complete markup) and the markup will be auto generated using {\ttfamily preview\+Templates}.
+\item New property {\ttfamily initial\+Preview\+File\+Type} to set the default file type for initial preview. Defaults to {\ttfamily image}. Must be on of the keys in {\ttfamily file\+Type\+Settings}.
+\item All the other settings can be controlled via {\ttfamily initial\+Preview\+Config}. The new properties available within {\ttfamily initial\+Preview\+Config} are\+:
+\begin{DoxyItemize}
+\item {\ttfamily type}\+: Override {\ttfamily initial\+Preview\+File\+Type} at global level and set a separate type for each file in the initial preview.
+\item {\ttfamily preview\+As\+Data}\+: boolean property to override the {\ttfamily initial\+Preview\+As\+Data} setting at global level
+\end{DoxyItemize}
+\item New zoom preview control buttons\+:
+\begin{DoxyItemize}
+\item {\ttfamily prev}
+\item {\ttfamily next}
+\item {\ttfamily fullscreen}
+\item {\ttfamily borderless}
+\item {\ttfamily toggleheader}
+\item {\ttfamily close}
+\end{DoxyItemize}
+\item The other new settings to control zoomed preview\+:
+\begin{DoxyItemize}
+\item {\ttfamily preview\+Zoom\+Settings}\+: Will allow to set the C\+SS style (e.\+g. width, height and other C\+SS style settings) for each zoomed content type (i.\+e. {\ttfamily image}, {\ttfamily pdf}, {\ttfamily video} etc.).
+\item {\ttfamily preview\+Zoom\+Button\+Icons}\+: Ability to set the labels for previous, next, fullscreen, borderless, and close buttons.
+\item {\ttfamily preview\+Zoom\+Button\+Titles}\+: Ability to set the titles for previous, next, fullscreen, borderless, and close buttons.
+\item {\ttfamily preview\+Zoom\+Button\+Classes}\+: Ability to set the C\+SS classes for previous, next, fullscreen, borderless, and close buttons.
+\end{DoxyItemize}
+\item Modifications to all language locales JS for accomodating new translations
+\end{DoxyItemize}
+\item (enh \#634)\+: Enhance ability for P\+DF and H\+T\+ML preview.
+\begin{DoxyItemize}
+\item Enhanced P\+DF support as P\+DF embedding is now possible for {\ttfamily initial\+Preview}. In addition a new template for P\+DF is available within {\ttfamily preview\+Templates}.
+\item H\+T\+ML Preview is enhanced with a better template. The plugin also now includes support for {\ttfamily D\+O\+M\+Purify} plugin (and available in plugins folder). This processes and cleans the H\+T\+ML from X\+SS before previewing. This behavior can be controlled via {\ttfamily purify\+Html} property that defaults to {\ttfamily true}.
+\end{DoxyItemize}
+\item (enh \#633)\+: New property {\ttfamily max\+File\+Preview\+Size} to control preview of large size files.
+\item (enh \#632)\+: Find correct filename in I\+E9.
+\item (enh \#618)\+: Update German Translations.
+\item (enh \#615)\+: Correct Finnish Localizations.
+\item (enh \#605)\+: Fixed preview\+Cache tags reset.
+\item (enh \#604)\+: Fixed unset method in deleting preview\+Cache index.
+\item (enh \#600)\+: Synchronize latest package on Nu\+Get.
+\item (bug \#595)\+: Correct initialization of {\ttfamily allowed\+Preview\+Types}.
+\end{DoxyItemize}
+
+\subsection*{version 4.\+3.\+1}
+
+{\bfseries Date\+:} 28-\/\+Feb-\/2016
+
+
+\begin{DoxyItemize}
+\item (bug \#577)\+: Better label spacing for default browse icon.
+\item (bug \#576)\+: Correct preview\+Cache initialization.
+\item (enh \#575)\+: Implement public method chaining and update docs for methods.
+\item (enh \#574)\+: Change naming convention for private / internal methods. Prepend internal plugin methods with underscore {\ttfamily \+\_\+}.
+\item (enh \#573)\+: Update package.\+json to include {\ttfamily peer\+Dependencies}.
+\item (enh \#572)\+: Add Finnish Translations.
+\item (enh \#567)\+: New properties and improved messages.
+\item (enh \#565)\+: Enhance progress bar display when upload is aborted or cancelled.
+\item (enh \#560)\+: Update French Translations.
+\item (enh \#559)\+: Allow custom error display styles (e.\+g. via bootstrap dialog) through these changes\+:
+\begin{DoxyItemize}
+\item added {\ttfamily msg} param in {\ttfamily fileerror}, {\ttfamily fileuploaderror}, and {\ttfamily filefoldererror} events.
+\end{DoxyItemize}
+\item (enh \#557)\+: Enhance default file type parsing to intelligently not render unpreviewable content.
+\item (enh \#555)\+: Set default value for {\ttfamily remove\+From\+Preview\+On\+Error} to {\ttfamily false}.
+\item (enh \#554)\+: Update documentation and demos to include {\ttfamily webkitdirectory} for upload.
+\item (enh \#514)\+: Set default value for {\ttfamily remove\+From\+Preview\+On\+Error} to {\ttfamily false}.
+\end{DoxyItemize}
+
+\subsection*{version 4.\+3.\+0}
+
+{\bfseries Date\+:} 25-\/\+Jan-\/2016
+
+
+\begin{DoxyItemize}
+\item (enh \#550)\+: Correct Drag and drop issue with v4.\+2.\+9.
+\end{DoxyItemize}
+
+\subsection*{version 4.\+2.\+9}
+
+{\bfseries Date\+:} 22-\/\+Jan-\/2016
+
+
+\begin{DoxyItemize}
+\item (enh \#545)\+: Refactor code to deep extend options correctly.
+\item (enh \#541)\+: Improve default slug callback to accept most characters.
+\item (enh \#534, enh \#535)\+: Ability to remove errored file thumbnails via {\ttfamily remove\+From\+Preview\+On\+Error}.
+\item (enh \#531)\+: Enhance/\+Fix typos of Arabic translation.
+\item (enh \#530)\+: Error alert box and preview thumbnail styling enhancements.
+\item (enh \#523)\+: Add new branch {\ttfamily sass} for {\ttfamily bootstrap-\/sass-\/official} support.
+\item (enh \#521)\+: Update Dutch Translations.
+\item (enh \#489)\+: Update documentation for {\ttfamily change} and {\ttfamily fileselect} events.
+\end{DoxyItemize}
+
+\subsection*{version 4.\+2.\+8}
+
+{\bfseries Date\+:} 18-\/\+Nov-\/2015
+
+
+\begin{DoxyItemize}
+\item (enh \#494)\+: Add Indonesian translations.
+\item (enh \#490)\+: Fix {\ttfamily zh-\/\+TW} translation {\ttfamily browse\+Label} wording.
+\item (enh \#488)\+: Publish to npm.
+\item (bug \#483)\+: Clear and reset native input after uploading each single file thumbnail.
+\item (enh \#481)\+: Universal Module Definition for use with Common\+JS, A\+MD or browser globals.
+\item (enh \#474)\+: Upload via button within each preview thumbnail skips last file for async uploads.
+\item (enh \#477)\+: Fix I\+E10 specific styling bug for file input block button.
+\item (enh \#465)\+: Add Català translations.
+\item (enh \#462)\+: Responsive buttons and new property {\ttfamily button\+Label\+Class}.
+\item (enh \#460)\+: Update C\+SS selectors prefix to start with {\ttfamily file}.
+\item (enh \#454)\+: Update Turkish Translations.
+\item (enh \#449)\+: Add Arabic Translations.
+\item Implement package.\+json.
+\item Update bootstrap bower version to support only 3.\+x variants.
+\end{DoxyItemize}
+
+\subsection*{version 4.\+2.\+7}
+
+{\bfseries Date}\+: 13-\/\+Sep-\/2015
+
+
+\begin{DoxyItemize}
+\item (bug \#442); Enhance the filenames parsing in the filestack and slug conversion.
+\item (enh \#437)\+: New property {\ttfamily default\+Preview\+Content} to control a default preview.
+\item (enh \#436)\+: New property {\ttfamily show\+Close} and new layout template {\ttfamily close} to control close icon display.
+\item (enh \#434)\+: Added Japanese translations.
+\item (enh \#433)\+: Added new events for image handling.
+\begin{DoxyItemize}
+\item {\ttfamily fileimageloaded} (fires after each image is loaded in preview) -\/ this is an existing event
+\item {\ttfamily fileimagesloaded} (fires after all images are loaded in preview)
+\item {\ttfamily fileimageresized} (fires after each image in preview is resized)
+\item {\ttfamily fileimagesresized} (fires after all images in preview are resized)
+\item {\ttfamily fileimageresizeerror} (fires when any image resize error is faced)
+\end{DoxyItemize}
+\item (enh \#432)\+: Send slugged file names with the file blob when uploading via ajax.
+\item (enh \#431)\+: Add Danish locale translations.
+\item (bug \#429)\+: Fix for MS Edge bug that does not support drag and drop.
+\item (enh \#428)\+: Enhancements to asynchronous uploads when {\ttfamily show\+Preview} is {\ttfamily false}.
+\item (enh \#427)\+: Add image resizing capability before upload.
+\item (bug \#420)\+: Revamp file status progress and positioning updates for asynchronous upload.
+\end{DoxyItemize}
+
+\subsection*{version 4.\+2.\+6}
+
+{\bfseries Date}\+: 26-\/\+Aug-\/2015
+
+
+\begin{DoxyItemize}
+\item (enh \#426)\+: Enhancements to progress bar and display thumbnail specific progress.
+\item (enh \#413)\+: Various updates to translations.
+\item (enh \#412)\+: Enhancements to file upload cancellation.
+\item (enh \#410)\+: Better validation for IE 10 and below.
+\item (enh \#405)\+: Create traditional Chinese translations.
+\item (enh \#401)\+: Various enhancements to preview file thumbnails and error validations.
+\item (bug \#398)\+: Validate {\ttfamily data.\+errorkeys} more correctly.
+\item (enh \#393)\+: Minor enhancements to abort events before upload.
+\item (enh \#392)\+: Enhancements to allow using plugin functions directly.
+\item (enh \#391)\+: Thumbnail styling enhancements for flash, html, and object types.
+\item (enh \#390)\+: Thumbnail error display enhancements.
+\item (enh \#389)\+: New templates and styling enhancements to caption and main buttons.
+\item (enh \#387)\+: Reset {\ttfamily initial\+Caption} better when preview is cleared.
+\item (enh \#385)\+: Updated Russian \& Ukranian translations.
+\item (enh \#382)\+: Better implementation for parsing text in {\ttfamily parse\+Error} method.
+\item Update translations to include {\ttfamily file\+Action\+Settings}.
+\item (enh \#380, \#381)\+: Consistent styling for thumbnails.
+\item (enh \#379)\+: Combine more translatable settings and update locale js files.
+\item (enh \#378)\+: Ability to configure different icon thumbnails for preview files.
+\item (enh \#377)\+: Various enhancements to text preview.
+\item (enh \#373)\+: Default delete ajax request type to P\+O\+ST (instead of D\+E\+L\+E\+TE).
+\end{DoxyItemize}
+
+\subsection*{version 4.\+2.\+5}
+
+{\bfseries Date}\+: 27-\/\+Jul-\/2015
+
+
+\begin{DoxyItemize}
+\item (enh \#372)\+: Create new event {\ttfamily filepreajax}.
+\item (enh \#371)\+: Ability to replace files in the preview. New {\ttfamily auto\+Replace} property.
+\item (bug \#370)\+: Reverts \#342 with better fix.
+\item (enh \#362)\+: Add Bulgarian translations.
+\end{DoxyItemize}
+
+\subsection*{version 4.\+2.\+4}
+
+{\bfseries Date}\+: 22-\/\+Jul-\/2015
+
+
+\begin{DoxyItemize}
+\item (enh \#358)\+: Implement event namespaces and enhance event handling process.
+\item (enh \#357)\+: Enhanced and better {\ttfamily refresh} method.
+\item (enh \#356)\+: Implement {\ttfamily destroy} method.
+\item (enh \#351)\+: Updates to Ukranian \& Russian translations.
+\item (enh \#342)\+: Add ability to modify extra data before ajax upload in {\ttfamily before\+Send} events.
+\item (enh \#340)\+: Receive {\ttfamily preview\+Id} and {\ttfamily index} in extra data for individual thumbnail uploads (ajax).
+\end{DoxyItemize}
+
+\subsection*{version 4.\+2.\+3}
+
+{\bfseries Date}\+: 21-\/\+Jun-\/2015
+
+
+\begin{DoxyItemize}
+\item (enh \#336)\+: Fixes to reset preview via {\ttfamily init\+Upload\+Success}.
+\end{DoxyItemize}
+
+\subsection*{version 4.\+2.\+2}
+
+{\bfseries Date}\+: 18-\/\+Jun-\/2015
+
+
+\begin{DoxyItemize}
+\item (enh \#332)\+: Bump nuget and bower package versions.
+\end{DoxyItemize}
+
+\subsection*{version 4.\+2.\+1}
+
+{\bfseries Date}\+: 15-\/\+Jun-\/2015
+
+
+\begin{DoxyItemize}
+\item (enh \#330)\+: Minor enhancements in validating preview and progress bar display.
+\item (enh \#329)\+: Message translation updates.
+\item (bug \#328)\+: Implement image dimension validations.
+\begin{DoxyItemize}
+\item New properties added to the plugin\+:
+\begin{DoxyItemize}
+\item {\ttfamily min\+Image\+Width}
+\item {\ttfamily min\+Image\+Height}
+\item {\ttfamily max\+Image\+Width}
+\item {\ttfamily max\+Image\+Height}
+\item {\ttfamily msg\+Image\+Width\+Small}
+\item {\ttfamily msg\+Image\+Height\+Small}
+\item {\ttfamily msg\+Image\+Width\+Large}
+\item {\ttfamily msg\+Image\+Height\+Large}
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item (bug \#327)\+: More correct clearing of preview.
+\item (bug \#315)\+: Fix parsing of preview settings for default (other) preview.
+\item (bug \#310)\+: Set missing caption icon on error.
+\item (enh \#309)\+: Fixes for older browsers.
+\item (enh \#308)\+: Better check for {\ttfamily data.\+error} being empty.
+\item (enh \#307)\+: Allow setting thumbnail frame css class and attributes via {\ttfamily initial\+Preview\+Config}.
+\item (enh \#305)\+: Implement better cleanup of memory with {\ttfamily revoke\+Object\+U\+RL}.
+\item (enh \#303)\+: Validate only files to be dragged and dropped.
+\item (enh \#302)\+: Add Greek (el) translations.
+\item (enh \#299)\+: Enhancements for displaying uploaded file thumbnails.
+\begin{DoxyItemize}
+\item New property {\ttfamily show\+Uploaded\+Thumbs} that will display uploaded thumbnails until the remove/clear button is explicitly pressed.
+\item New event {\ttfamily filesuccessremove}. This will be triggered on removing the uploaded thumbnail using the thumbnail delete button. The event shares the following parameters\+:
+\begin{DoxyItemize}
+\item {\ttfamily id}\+: the H\+T\+ML id attribute of the thumbnail container The {\ttfamily event} can be set to return {\ttfamily false} to abort the thumbnail removal.
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item (enh \#297)\+: Add Romanian translations.
+\item (enh \#296)\+: Fixed license identifiers in bower.\+json and composer.\+json.
+\item (bug \#295)\+: Validate {\ttfamily overwrite\+Initial} correctly for ajax uploads.
+\item (enh \#287)\+: Add Brazilian Portugese (pt-\/\+BR) translations.
+\item (enh \#279, \#280)\+: Fixed error for failed response types.
+\end{DoxyItemize}
+
+\subsection*{version 4.\+2.\+0}
+
+{\bfseries Date}\+: 11-\/\+May-\/2015
+
+
+\begin{DoxyItemize}
+\item (enh \#277)\+: New {\ttfamily language} property to allow configuring multi lang widgets on same page.
+\item (enh \#275)\+: Add Czech \& Slovakian translations.
+\end{DoxyItemize}
+
+\subsection*{version 4.\+1.\+9}
+
+{\bfseries Date}\+: 02-\/\+May-\/2015
+
+
+\begin{DoxyItemize}
+\item (bug \#273)\+: Reset caption correctly after all initial preview is deleted.
+\item (enh \#271)\+: Add Dutch translations.
+\item (enh \#270)\+: Add Portugese translations.
+\item (enh \#269, \#272)\+: Add Turkish translations.
+\item (enh \#264)\+: Validate input type of file before initializing plugin.
+\item (enh \#263)\+: Enhance parsing of file preview thumbnails and actions.
+\item (enh \#259)\+: Add Polish translations.
+\item (enh \#258)\+: Enhance messages to include file plural and single.
+\item (bug \#257)\+: Fix upload single to replace thumbs correctly.
+\item (bug \#253)\+: Fix initial preview delete cache initialization.
+\item (enh \#252)\+: Enhance async batch completion.
+\item (enh \#251)\+: Add Italian localizations.
+\item (enh \#250)\+: Change default slug routine to allow umlauts in filenames.
+\item (bug \#249)\+: Fix error message content display.
+\item (enh \#248)\+: keep chinese characters in file caption.
+\item (bug \#247)\+: Correct mime types validation.
+\item (enh \#245)\+: Allow initial caption to be set without initial preview.
+\item (enh \#244)\+: Add Serbian translations.
+\item (bug \#243)\+: Correct sending of {\ttfamily delete\+Extra\+Data}.
+\item (enh \#241)\+: Enhancements to initial preview delete to perform validations before delete.
+\item (bug \#238)\+: Correct initialization of plugin variables when other than max\+File\+Count \& max\+File\+Size.
+\item (enh \#237)\+: Better styling of file caption icon.
+\item (enh \#232)\+: Update docs to reflect updated bootstrap C\+DN domain.
+\end{DoxyItemize}
+
+\subsection*{version 4.\+1.\+8}
+
+{\bfseries Date}\+: 30-\/\+Mar-\/2015
+
+
+\begin{DoxyItemize}
+\item (enh \#230)\+: More correct initial preview delete reset.
+\item (enh \#229)\+: Created French translations.
+\item (enh \#228)\+: Created Thai translations.
+\item (enh \#227)\+: Created Ukranian translations and updated Russian translations.
+\item (enh \#226)\+: Create Spanish (Latin American) translations.
+\item (enh \#225)\+: Create Russian translations.
+\item (enh \#222)\+: Enhance to include dynamically replaceable thumbnail tags. Two new properties {\ttfamily preview\+Thumb\+Tags} and {\ttfamily initial\+Preview\+Thumb\+Tags} will be available for configuration.
+\item (enh \#218)\+: Do not clear preview for ajaxuploads until remove button clicked.
+\item (enh \#217)\+: Ensure {\ttfamily filebatchselected} event is triggered after File\+Reader completes reading files selected.
+\item (enh \#216)\+: Add Hungarian Translations.
+\item (enh \#215)\+: Set default delete method R\+E\+ST compliant.
+\item (enh \#213)\+: Code cleanup, eliminate change event on clear and properly reset preview cache after ajax deletes.
+\item (enh \#212)\+: Revamp preview to use a new preview caching object.
+\item (enh \#211)\+: Add ability to show detailed server error stack via {\ttfamily show\+Ajax\+Error\+Details}.
+\item (enh \#209)\+: Better validation for folder drag and drop and auto-\/skip any dropped folders. New property {\ttfamily msg\+Folders\+Not\+Allowed} added to the plugin to allow configuring the message shown. The event {\ttfamily filefoldererror} is triggered when a folder is dragged.
+\item (enh \#206)\+: Ability to add custom validation and trigger custom error to abort upload.
+\begin{DoxyItemize}
+\item This enhancement will enable you to add your additional custom validations to enhance the fileinput to be used for innumerous scenarios. It will allow an ability to return an associative object with any of the fileinput events (except the error events and the {\ttfamily filebatchuploadsuccess} or {\ttfamily filebatchuploadcomplete}) e.\+g. {\ttfamily change}, {\ttfamily fileselect}, {\ttfamily filepreupload}, {\ttfamily filebatchpreupload} etc. The object can return the following keys\+:
+\begin{DoxyItemize}
+\item {\ttfamily message}\+: {\itshape string}, the validation error message to be displayed before upload. If this is set the plugin will automatically abort the upload whenever called and display this as an error message. You can use this property for example to read a file and perform your own custom validation.
+\item {\ttfamily data}\+: {\itshape object}, an optional associative array of additional data that you can pass for usage later.
+\end{DoxyItemize}
+\item You can get this data by reading {\ttfamily abort\+Data} in the parameters for the new {\ttfamily filecustomerror} event. This new event will be triggered during upload, when you have triggered an abort from any of the other events.
+\end{DoxyItemize}
+\item (enh \#205)\+: Allow to auto set initial\+Preview within {\ttfamily filebatchuploadcomplete} \& {\ttfamily filebatchuploadsuccess}.
+\begin{DoxyItemize}
+\item Allows you to auto define the {\ttfamily initial\+Preview} and {\ttfamily initial\+Preview\+Config} after an ajax upload by returning these within the data object from your ajax response on {\ttfamily fileuploaded} \& {\ttfamily filebatchuploadsuccess}.
+\end{DoxyItemize}
+\item (enh \#204)\+: New properties {\ttfamily file\+Min\+Count} and {\ttfamily msg\+Files\+Too\+Less} (useful to make file input mandatory).
+\begin{DoxyItemize}
+\item The {\ttfamily file\+Min\+Count} property will allow to set the minimum file count needed before triggering upload. It will work for both {\ttfamily ajax} uploads and {\ttfamily normal form based submission}.
+\item This will enable you to set the file input to be a mandatory / required input. (e.\+g. {\ttfamily file\+Min\+Count} = {\ttfamily 1}). The {\ttfamily msg\+Files\+Too\+Less} will be displayed and error raised.
+\item If {\ttfamily file\+Min\+Count} is set to {\ttfamily 0} it will be treated as files are optional and no error will be triggered.
+\end{DoxyItemize}
+\item (enh \#203)\+: Enhancements and revamp of all error events.
+\begin{DoxyItemize}
+\item fileerror
+\item fileuploaderror
+\item filebatchuploaderror
+\item filedeleteerror
+\item filefoldererror (new event -\/ see \#209)
+\item filecustomerror (new event -\/ see \#206)
+\end{DoxyItemize}
+\item (enh \#202)\+: Ability to add Translations / Locales.
+\begin{DoxyItemize}
+\item Identify and group all messages that need to be translated configurable via `\$.fn.\+fileinput.\+locales\mbox{[}\textquotesingle{}$<$lang-\/code$>$\textquotesingle{}\mbox{]}{\ttfamily }
+\item {\ttfamily Set default english messages configuration}\$.fn.\+fileinput.\+locales\mbox{[}\textquotesingle{}en\textquotesingle{}\mbox{]}{\ttfamily within the plugin core code}
+\item {\ttfamily Individual locale files need to be created as separate js files e.\+g.}$<$lang$>$.js{\ttfamily }
+\end{DoxyItemize}
+\item {\ttfamily (bug \#193)\+: Better validation for triggering}filebatchuploadcomplete` on async batch upload completion.
+\item (enh \#192)\+: Ability to extend and add one\textquotesingle{}s own ajax settings.
+\begin{DoxyItemize}
+\item New property {\ttfamily ajax\+Delete\+Settings} to help extend and add to delete ajax settings.
+\item {\ttfamily ajax\+Settings} to help extend and add upload ajax settings
+\end{DoxyItemize}
+\item (enh \#189)\+: Reinitialize initial preview delete events correctly on file selection.
+\item (enh \#188)\+: Clear fileinput more correctly for all browsers when initial\+Preview is set enhancement
+\item (enh \#187)\+: New property {\ttfamily preview\+File\+Icon} to configure file icon shown in preview for unreadable file types.
+\item (enh \#184)\+: Fix documentation for filedeleted event.
+\item (enh \#183)\+: Delete extra data enhancements.
+\item (enh \#181)\+: Fix change event triggered for IE 11 when file input is set to empty.
+\item (enh \#179)\+: Validate and cast {\ttfamily max\+File\+Size} and {\ttfamily max\+File\+Count} to numeric -\/ even if they have been setup as a string.
+\item (enh \#178)\+: Updated R\+E\+A\+D\+ME for cancel button configuration.
+\item (enh \#177)\+: Trigger filebatchpreupload if show\+Preview is {\ttfamily false}.
+\item (enh \#176)\+: Wrong file in R\+E\+A\+D\+ME installation steps fixed.
+\item (enh \#175)\+: Ability to override delete extra data in {\ttfamily initial\+Preview\+Config}.
+\item (enh \#174)\+: New {\ttfamily delete\+Url} property.
+\item (enh \#167, \#173)\+: New {\ttfamily delete\+Extra\+Data} property for ajax deletions.
+\item (bug \#171)\+: Fix typo for files validation.
+\end{DoxyItemize}
+
+\subsection*{version 4.\+1.\+7}
+
+{\bfseries Date}\+: 13-\/\+Feb-\/2015
+
+
+\begin{DoxyItemize}
+\item Relocate sample files from examples directory to \href{https://github.com/kartik-v/bootstrap-fileinput-samples}{\tt bootstrap-\/fileinput-\/samples} repo.
+\item Set copyright year to current.
+\item (enh \#162)\+: New property ajax\+Settings to allow configuring ajax params.
+\item (bug \#160)\+: Correct documentation typo for usage.
+\item (bug \#159)\+: Ensure filestack is passed correctly with {\ttfamily out\+Data} for events.
+\item (enh \#157)\+: Upload progress bar styling enhancements.
+\begin{DoxyItemize}
+\item Allow upload progress bar css class to be configurable
+\item Create and allow two different styles/css classes for progress bar
+\begin{DoxyItemize}
+\item {\ttfamily progress\+Class}\+: styling for progress bar when upload is in process
+\item {\ttfamily progress\+Complete\+Class}\+: styling for progress bar when upload is complete
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item (enh \#156)\+: Fix reset of file stack for various upload modes (single, batch async and batch sync).
+\item (enh \#155)\+: Allow display of long file names without spaces/word breaks.
+\item (enh \#154)\+: Code cleanup and restructure for JS lint changes (using J\+S\+Hint Code cleanup library).
+\item (enh \#153)\+: Improve error handler for trapping File\+Reader security exceptions and new property {\ttfamily msg\+File\+Secured} will display the security exception message.
+\item (enh \#152)\+: New faster {\ttfamily replace\+All} method instead of regexp parsing to replace tags in templates.
+\item (enh \#151)\+: New {\ttfamily filebatchselected} event triggered after every batch of files are selected.
+\item (enh \#149)\+: Custom tags support for layout\+Templates and preview\+Templates (new properties {\ttfamily custom\+Layout\+Tags} and {\ttfamily custom\+Preview\+Tags} included).
+\end{DoxyItemize}
+
+\subsection*{version 4.\+1.\+6}
+
+{\bfseries Date\+:} 20-\/\+Jan-\/2015
+
+
+\begin{DoxyItemize}
+\item (enh \#139)\+: Reset file stack correctly on ajax upload completion.
+\item (enh \#137)\+: Trigger new events -\/ {\ttfamily filedisabled} and {\ttfamily fileenabled}.
+\item (enh \#136)\+:Create new upload method that can be called externally.
+\item (enh \#131)\+: Allow empty values in extra data to be submitted.
+\end{DoxyItemize}
+
+\subsection*{version 4.\+1.\+5}
+
+{\bfseries Date\+:} 12-\/\+Jan-\/2015
+
+
+\begin{DoxyItemize}
+\item (enh \#121)\+: Animate progress bars by default for upload progress.
+\item (bug \#120)\+: Correct multiple iterations of upload for async batch uploads.
+\item (enh \#119)\+: Enhance caption to include ellipsis for long file names
+\item (enh \#116)\+: Hide remove and upload buttons until unless file(s) are selected.
+\item (enh \#115)\+: Autosize file caption responsively on window resize.
+\item (bug \#114)\+: Prevent multiple file selection when using single file configuration.
+\item (bug \#113)\+: Icon layout template undefined when using user template.
+\item (bug \#112)\+: Fix undefined filestack for individual file upload within preview.
+\item (enh \#108)\+: Add nuget package.
+\item (enh \#106)\+: Enhance events for ajax requests and enable cancelling sync uploads
+\item (enh \#105)\+: Expose current jq\+X\+HR object on ajax events.
+\item (bug \#104)\+: Fix formdata not defined.
+\item (bug \#100, \#101)\+: Set right params for error thrown during reading of files.
+\end{DoxyItemize}
+
+\subsection*{version 4.\+1.\+4}
+
+{\bfseries Date\+:} 26-\/\+Dec-\/2014
+
+
+\begin{DoxyItemize}
+\item (bug \#97)\+: Reset events correctly with plugin refresh method.
+\item (bug \#95)\+: Correct event off for drag \& drop in plugin refresh method.
+\item Code cleanup with reusable methods for event raising and out\+Data generation.
+\item (enh \#93)\+: Better styling of file upload icon indicators in thumbnails.
+\item (enh \#92)\+: Realign event triggering timing for batch uploads to ensure out\+Data is available.
+\item (enh \#91)\+: Pass File\+Reader instance with out\+Data in events.
+\item (enh \#90)\+: New event {\ttfamily filebatchpreupload} for both synchronous and asynchronous batch uploads.
+\item (enh \#89)\+: New {\ttfamily other\+Action\+Buttons} to allow adding customized initial preview content actions.
+\item (enh \#88)\+: Allow upload\+Extra\+Data to be passed as a callback.
+\end{DoxyItemize}
+
+\subsection*{version 4.\+1.\+3}
+
+{\bfseries Date\+:} 20-\/\+Dec-\/2014
+
+
+\begin{DoxyItemize}
+\item (enh \#87)\+: More correct progress indicator percentage for asynchronous upload.
+\begin{DoxyItemize}
+\item {\ttfamily filepreupload}
+\item {\ttfamily fileuploaded}
+\item {\ttfamily fileuploaderror}
+\item {\ttfamily filebatchuploaderror}
+\item {\ttfamily filebatchuploadsuccess}
+\item {\ttfamily filebatchuploadcomplete}
+\end{DoxyItemize}
+\item (enh \#86)\+: Disable thumbnail action buttons when upload is in progress.
+\item (enh \#85)\+: Combine output data as a single object, that is sent for various file upload events.
+\end{DoxyItemize}
+
+\subsection*{version 4.\+1.\+2}
+
+{\bfseries Date\+:} 19-\/\+Dec-\/2014
+
+
+\begin{DoxyItemize}
+\item (enh \#81)\+: Add new events\+:
+\begin{DoxyItemize}
+\item {\ttfamily filebatchuploadsuccess}
+\item {\ttfamily filebatchuploadcomplete}
+\end{DoxyItemize}
+\item (enh \#80)\+: Allow access to {\ttfamily upload\+Extra\+Data} and {\ttfamily response\+Data} to following events
+\begin{DoxyItemize}
+\item {\ttfamily filepreupload}
+\item {\ttfamily fileuploaded}
+\item {\ttfamily fileuploaderror}
+\item {\ttfamily filebatchuploaderror}
+\item {\ttfamily filebatchuploadsuccess}
+\item {\ttfamily filebatchuploadcomplete}
+\item {\ttfamily filelock}
+\item {\ttfamily fileunlock}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection*{version 4.\+1.\+1}
+
+{\bfseries Date\+:} 18-\/\+Dec-\/2014
+
+
+\begin{DoxyItemize}
+\item (bug \#78)\+: Set upload\+Extra\+Data parameters to be correctly sent via P\+O\+ST.
+\item (bug \#76)\+: Update filestack when {\ttfamily show\+Preview} is false.
+\item (enh \#58)\+: Set a new property {\ttfamily text\+Encoding} for reading the text files with right encoding.
+\end{DoxyItemize}
+
+\subsection*{version 4.\+1.\+0}
+
+{\bfseries Date\+:} 17-\/\+Dec-\/2014
+
+
+\begin{DoxyItemize}
+\item (enh \#75)\+: Better validation of browser support for drag and drop.
+\item (enh \#74)\+: Enhancements to file validation errors for both F\+O\+RM and A\+J\+AX uploads.
+\begin{DoxyItemize}
+\item For normal Form based uploads automatically disable the Upload button
+\item Display a separate error styled thumbnail for the file that faced the validation error.
+\item Reset errors correctly to overwrite files with a new change or drag/drop
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection*{version 4.\+0.\+0}
+
+{\bfseries Date\+:} 14-\/\+Dec-\/2014
+
+
+\begin{DoxyItemize}
+\item (bug \#72)\+: Fix bootstrap \#\# version constraint.
+\item Renamed {\ttfamily initial\+Delimiter} to {\ttfamily initial\+Preview\+Delimiter}
+\item (enh \#70)\+: Version 4.\+0 enhancements.
+\end{DoxyItemize}
+
+\subsubsection*{Version 4.\+0 Features}
+
+
+\begin{DoxyItemize}
+\item Add functionality for A\+J\+AX based U\+P\+L\+O\+AD using H\+T\+M\+L5 Form\+Data (most modern browsers support it). Will degrade to normal Form Based File submission if this is not supported.
+\item To use A\+J\+AX Upload, the {\ttfamily upload\+Url} property is M\+A\+N\+D\+A\+T\+O\+RY and must be set.
+\item Enhance plugin to now allow files to be added, appended, removed (based on F\+E\+E\+D\+B\+A\+CK from many). Thus one can append files to preview.
+\item New D\+R\+AG \& D\+R\+OP zone available in preview to drag and drop files and append.
+\item Delete or upload files one by one OR in batch.
+\item If {\ttfamily show\+Preview} is set to false, or upload\+Url is not supported plugin will degrade to normal form based upload.
+\item Configurable indicators for file awaiting upload, file successfully uploaded, files errored in upload.
+\item Ability to add extra form data with ajax based uploads.
+\item Upload progress bar and individual thumbnail upload indicators.
+\item Ability to cancel and abort ongoing A\+J\+AX uploads.
+\item Templates have been revamped and enhanced for each file type.
+\item Ensure plugin is still lean in size and optimized for performance inspite of the above features by optimally utilizing H\+T\+M\+L5 \& jquery features only.
+\end{DoxyItemize}
+
+\subsubsection*{New properties added}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily show\+Cancel}\+: shows a cancel button for aborting ajax uploads (defaults to {\ttfamily true}).
+\item {\ttfamily cancel\+Label}\+: label for the cancel button.
+\item {\ttfamily cancel\+Title}\+: title for the cancel button on hover.
+\item {\ttfamily cancel\+Icon}\+: icon markup for the cancel button
+\item {\ttfamily cancel\+Class}\+: C\+SS class for the cancel button.
+\item {\ttfamily remove\+Title}\+: title for the remove button on hover.
+\item {\ttfamily upload\+Title}\+: title for the upload button on hover.
+\item {\ttfamily upload\+Url}\+: the url that will be used to process A\+J\+AX based uploads (using Form\+Data X\+H\+R2).
+\item {\ttfamily upload\+Extra\+Data}\+: extra data that will be passed as data to the url/\+A\+J\+AX server call via P\+O\+ST
+\item {\ttfamily upload\+Async}\+: whether the batch upload of multiple files will be asynchronous/in parallel. Defaults to {\ttfamily true}.
+\item {\ttfamily initial\+Preview\+Show\+Delete}\+: shows a delete button for each initial preview content\textquotesingle{}s thumbnail (defaults to {\ttfamily true}).
+\item {\ttfamily initial\+Preview\+Config}\+: configuration for setting up each {\ttfamily initial\+Preview\+Content} item (associative array/object)
+\begin{DoxyItemize}
+\item {\ttfamily caption}\+: The caption or filename to display for each initial preview item content.
+\item {\ttfamily width}\+: The C\+SS width of the image/content displayed.
+\item {\ttfamily url}\+: The U\+RL for deleting the image/content via A\+J\+AX (shown only for {\ttfamily initial\+Preview\+Content}).
+\item {\ttfamily key}\+: The key that will be passed to the U\+RL via P\+O\+ST (shown only for {\ttfamily initial\+Preview\+Content}).
+\end{DoxyItemize}
+\item {\ttfamily drop\+Zone\+Enabled}\+: Enable a drag and drop zone for dragging files and is available only for ajax based uploads (defaults to {\ttfamily true}).
+\item {\ttfamily drop\+Zone\+Title}\+: Title to be displayed in the drag \& drop zone.
+\item {\ttfamily drop\+Zone\+Title\+Class}\+: C\+SS class for the drag \& drop zone title.
+\item {\ttfamily file\+Action\+Settings}\+: configuration for setting up actions for newly selected file thumbnails in the preview (associative array/object)
+\begin{DoxyItemize}
+\item {\ttfamily remove\+Icon}\+: icon for remove button to be displayed in each file thumbnail.
+\item {\ttfamily remove\+Class}\+: C\+SS class for the remove button in each file thumbnail.
+\item {\ttfamily remove\+Title}\+: title for remove button in each file thumbnail.
+\item {\ttfamily upload\+Icon}\+: icon for upload button to be displayed in each file thumbnail.
+\item {\ttfamily upload\+Class}\+: C\+SS class for the remove button in each file thumbnail.
+\item {\ttfamily upload\+Title}\+: title for remove button in each file thumbnail.
+\item {\ttfamily indicator\+New}\+: an indicator (H\+T\+ML markup) for new pending upload displayed in each file thumbnail.
+\item {\ttfamily indicator\+Success}\+: an indicator (H\+T\+ML markup) for successful upload displayed in each file thumbnail.
+\item {\ttfamily indicator\+Error}\+: an indicator (H\+T\+ML markup) for error in upload displayed in each file thumbnail.
+\item {\ttfamily indicator\+Loading}\+: an indicator (H\+T\+ML markup) for ongoing upload displayed in each file thumbnail.
+\item {\ttfamily indicator\+New\+Title}\+: title to display on hover of indicator for new pending upload in each file thumbnail.
+\item {\ttfamily indicator\+Success\+Title}\+: title to display on hover of indicator for successful in each file thumbnail.
+\item {\ttfamily indicator\+Error\+Title}\+: title to display on hover of indicator for error in upload in each file thumbnail.
+\item {\ttfamily indicator\+Loading\+Title}\+: title to display on hover of indicator for ongoing upload in each file thumbnail.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection*{version 3.\+0.\+0}
+
+{\bfseries Date\+:} 08-\/\+Dec-\/2014
+
+
+\begin{DoxyItemize}
+\item (bug \#68)\+: Fix refresh method of the fileinput to trigger change correctly.
+\item (enh \#67)\+: Enhance support for IE browsers
+\begin{DoxyItemize}
+\item Add specific validations for parsing IE versions rightly
+\item Enhance plugin to extend styling support to IE 9 (with the limitation that IE 9 does not support H\+T\+ML 5 features like multiple file upload)
+\item Fix clearing of file input rightly for IE 9 \& IE 10
+\item Degrade plugin automatically to a native file input for older IE versions
+\item Prevent change method firing twice when file is cleared after error is encountered in IE 11.
+\end{DoxyItemize}
+\item (enh \#65)\+: Correct validation of {\ttfamily refresh\+Preview} using {\ttfamily update\+File\+Details}.
+\item (enh \#64)\+: Add ability to override the slug method with a {\ttfamily slug\+Callback} property.
+\item (bug \#61)\+: Refresh preview to show errors correctly after each file is validated.
+\item (enh \#60)\+: Enhance upload button for disable/enable when used with {\ttfamily $<$a$>$} tag.
+\end{DoxyItemize}
+
+\subsection*{version 2.\+9.\+0}
+
+{\bfseries Date\+:} 23-\/\+Nov-\/2014
+
+
+\begin{DoxyItemize}
+\item (enh \#56)\+: Trigger new events {\ttfamily filebrowse} and {\ttfamily fileselectnone}.
+\item (enh \#55)\+: Clear the files when file browse dialog is cancelled only if the browser clears the native file input.
+\item (enh \#53)\+: Validations and events for right reset of files when browse button is clicked.
+\end{DoxyItemize}
+
+\subsection*{version 2.\+8.\+0}
+
+{\bfseries Date\+:} 13-\/\+Nov-\/2014
+
+
+\begin{DoxyItemize}
+\item (enh \#52)\+: Raise new {\ttfamily fileimageloaded} event.
+\item (enh \#51)\+: Autosize preview images when they exceed the size of the preview container.
+\item (enh \#50)\+: Dynamically auto size file captions for long file names exceeding container width. New property {\ttfamily auto\+Fit\+Caption} is added which defaults to {\ttfamily true}. When this is {\ttfamily true} the plugin will auto fit caption text within the container dynamically and responsively based on window size.
+\end{DoxyItemize}
+
+\subsection*{version 2.\+7.\+0}
+
+{\bfseries Date\+:} 11-\/\+Nov-\/2014
+
+
+\begin{DoxyItemize}
+\item (enh \#49)\+: Set image preview dimensions to auto fit and center
+\item (enh \#48)\+: Trigger {\ttfamily fileloaded} event when {\ttfamily show\+Preview} is {\ttfamily false}.
+\item Set release to stable in composer.\+json.
+\end{DoxyItemize}
+
+\subsection*{version 2.\+6.\+0}
+
+{\bfseries Date\+:} 15-\/\+Oct-\/2014
+
+
+\begin{DoxyItemize}
+\item (bug \#44)\+: Browser I\+E10 hangs on file clear.
+\item (bug \#43)\+: Validate special characters in filename before generating caption.
+\item (enh \#42)\+: Enhance plugin to configure the {\ttfamily el\+Error\+Container} for displaying validation errors.
+\item Templatize error\+Container for display within the preview window.
+\item (bug \#40)\+: More correct fix for IE (ver $<$ 11) inability to clear fileinput values.
+\end{DoxyItemize}
+
+\subsection*{version 2.\+5.\+0}
+
+{\bfseries Date\+:} 09-\/\+Oct-\/2014
+
+
+\begin{DoxyItemize}
+\item (bug \#40)\+: Fix IE (ver $<$ 11) inability to clear fileinput values.
+\item (bug \#39)\+: H\+T\+ML encode caption hover title.
+\item (enh \#38)\+: Highlight error C\+SS in file caption on validation error.
+\item (bug \#37)\+: H\+T\+ML encode text content for preview in modal.
+\item (enh \#36)\+: New feature. Validation routine for checking allowed file types and extensions.
+\end{DoxyItemize}
+
+\subsection*{version 2.\+4.\+0}
+
+{\bfseries Date\+:} 20-\/\+Sep-\/2014
+
+
+\begin{DoxyItemize}
+\item (enh \#33)\+: Better text format validation and correct modal preview.
+\item (enh \#32)\+: Added checks for file api support.
+\item (enh \#31)\+: Better control and configuration of preview templates.
+\item (enh \#30)\+: Enhanced generic support for more preview formats (audio, video, html, flash, and other objects).
+\end{DoxyItemize}
+
+\begin{quote}
+{\bfseries Note\+:} There are BC Breaking Changes with release v2.\+4.\+0. \end{quote}
+
+
+With release v2.\+4.\+0, the plugin has been revamped to support and configure a wide variety of file formats for preview. This may break some backward compatibility (BC) for older versions that use custom templates.
+
+The following are the major changes with release v2.\+4.\+0\+:
+
+
+\begin{DoxyItemize}
+\item Plugin has been revamped to build preview intelligence based on various file preview types. The inbuilt file support types are categorized as {\ttfamily image}, {\ttfamily text}, {\ttfamily html}, {\ttfamily video}, {\ttfamily audio}, {\ttfamily flash}, {\ttfamily object}, and {\ttfamily other}.
+\item {\ttfamily allowed\+Preview\+Types}\+: You can now configure which all file types are allowed to be shown as a preview. This defaults to `\mbox{[}\textquotesingle{}image\textquotesingle{}, \textquotesingle{}html\textquotesingle{}, \textquotesingle{}text\textquotesingle{}, \textquotesingle{}video\textquotesingle{}, \textquotesingle{}audio\textquotesingle{}, \textquotesingle{}flash\textquotesingle{}, \textquotesingle{}object\textquotesingle{}\mbox{]}{\ttfamily . Thus all file types are treated as an object to preview by default. For example\+To preview only}image{\ttfamily and}video{\ttfamily , you can set this to}\mbox{[}\textquotesingle{}image\textquotesingle{}, \textquotesingle{}video\textquotesingle{}\mbox{]}{\ttfamily . -\/}allowed\+Preview\+Mime\+Types{\ttfamily \+: In addition to}allowed\+Preview\+Types`, you can also control which all mime types can be displayed for preview. This defaults to null, meaning all mime types are supported.
+\item {\ttfamily layout\+Templates}\+: Allows you to configure all layout template settings within one property. The layout objects that can be configured are\+: {\ttfamily main1}, {\ttfamily main2}, {\ttfamily preview}, {\ttfamily caption}, and {\ttfamily modal}.
+\item {\ttfamily preview\+Templates}\+: All preview templates for {\bfseries each preview type} have been combined into one property, instead of separate templates for image, text etc. The keys are the formats as set in {\ttfamily allowed\+Preview\+Types} and values are the templates used for previewing. There are default prebuilt templates for each preview file type ({\ttfamily generic}, {\ttfamily image}, {\ttfamily text}, {\ttfamily html}, {\ttfamily video}, {\ttfamily audio}, {\ttfamily flash}, {\ttfamily object}, and {\ttfamily other}). The {\ttfamily generic} template is used only for displaying {\ttfamily initial\+Preview} content using direct markup.
+\item {\ttfamily preview\+Settings}\+: Allows you to configure width and height for each preview image type. The plugin has default widths and heights predefined for each type i.\+e {\ttfamily image}, {\ttfamily text}, {\ttfamily html}, {\ttfamily video}, {\ttfamily audio}, {\ttfamily flash}, and {\ttfamily object}.
+\item {\ttfamily file\+Type\+Settings}\+: Allows you to configure and identify each preview file type using a callback. The plugin has default callbacks predefined to identify each type i.\+e {\ttfamily image}, {\ttfamily text}, {\ttfamily html}, {\ttfamily video}, {\ttfamily audio}, {\ttfamily flash}, and {\ttfamily object}.
+\item Replacing tags within templates has been enhanced. With this release it will automatically check for multiple occurrences of each tag to replace within a template string.
+\end{DoxyItemize}
+
+\begin{quote}
+N\+O\+TE\+: Flash preview will require Shockwave flash to be installed and supported by the client browser. The flash preview currently works successfully with webkit browsers only. Video \& Audio formats are however supported by all modern browsers \end{quote}
+that support the H\+T\+M\+L5 {\ttfamily video}/{\ttfamily audio} tags. Note that browsers have limited number of video/audio formats supported by the H\+T\+M\+L5 video element (e.\+g. mp4, webm, ogg, mp3, wav). The size of video files are recommended to be small (to be controlled through {\ttfamily max\+File\+Size} property) so that it does not affect the preview performance. You can copy a few files from the {\ttfamily examples} directory of this plugin repo, to test a few examples of flash and video files.
+
+\subsection*{version 2.\+3.\+0}
+
+{\bfseries Date\+:} 19-\/\+Sep-\/2014
+
+
+\begin{DoxyItemize}
+\item Better replacement of tags in templates. Replaces all tag occurences with this new release.
+\item (enh \#28, \#29)\+: Added support for previewing flash and video files.
+\end{DoxyItemize}
+
+\subsection*{version 2.\+2.\+0}
+
+{\bfseries Date\+:} 19-\/\+Aug-\/2014
+
+
+\begin{DoxyItemize}
+\item (enh \#25)\+: Graceful degrade to normal file input for older browsers (including previous versions of Safari).
+\item (enh \#24)\+: Update read\+As\+Binary\+String to read\+As\+Array\+Buffer
+\end{DoxyItemize}
+
+\subsection*{version 2.\+1.\+0}
+
+{\bfseries Date\+:} 11-\/\+Aug-\/2014
+
+
+\begin{DoxyItemize}
+\item Other minor bug fixes.
+\item (enh \#22)\+: Enhance file caption message display for validation errors.
+\item (enh \#21)\+: Enhance loading progress message and message templates for multiple file uploads.
+\item (enh \#21)\+: Enhance multiple file upload and preview performance using set\+Timeout.
+\item (enh \#20)\+: Fix {\ttfamily fileloaded} event to increment {\ttfamily preview\+Id} and enhance to return file index.
+\item (enh \#19)\+: Synchronize preview with file browse dialog behavior, when cancel button is pressed in file dialog window.
+\item (enh \#18)\+: Better validation for older browsers (not supporting H\+T\+M\+L5) to degrade to normal file input.
+\item Enhanced plugin to improve browser performance when loading and previewing multiple image files.
+\item New configurable error messages added\+: {\ttfamily msg\+Files\+Too\+Many}, {\ttfamily msg\+File\+Not\+Found}, {\ttfamily msg\+File\+Not\+Readable}, {\ttfamily msg\+File\+Preview\+Aborted}, and {\ttfamily msg\+File\+Preview\+Error}.
+\item New configuration property added\+: {\ttfamily max\+Files\+Count}. Defaults to {\ttfamily 0} which means unlimited.
+\item (enh \#16, \#17)\+: Added exception handling for trapping File\+Reader A\+PI errors
+\end{DoxyItemize}
+
+\subsection*{version 2.\+0.\+0}
+
+{\bfseries Date\+:} 25-\/\+Jul-\/2014
+
+
+\begin{DoxyItemize}
+\item Added delimiter option for {\ttfamily initial\+Preview} to pass multiple content delimited as a string.
+\item Automatic scale images for preview, when images are too wide to fit in container.
+\item Correct calculation of files selected when {\ttfamily init\+Preview} is false.
+\item Make caption text configurable through a new parameter {\ttfamily msg\+Selected}.
+\item Enhanced configurable templates for previewing image, text, and other files (and a generic template).
+\item New plugin methods added\+: {\ttfamily disable}, {\ttfamily enable}
+\item New plugin events added\+: {\ttfamily fileerror}, {\ttfamily fileloaded}, {\ttfamily filecleared}.
+\item (enh \#15)\+: Enhanced validation of file size through {\ttfamily max\+File\+Size} configuration.
+\item (enh \#12, \#13, \#14)\+: Various enhancements and fixes.
+\end{DoxyItemize}
+
+\subsection*{version 1.\+9.\+0}
+
+{\bfseries Date\+:} 21-\/\+Jul-\/2014
+
+
+\begin{DoxyItemize}
+\item (enh \#10)\+: Ability to display initial caption, when initial\+Preview is false.
+\item (enh \#9)\+: Enhanced caption template and styling for captions to prevent overflow of long file names out of the caption container.
+\end{DoxyItemize}
+
+\subsection*{version 1.\+8.\+0}
+
+{\bfseries Date\+:} 15-\/\+Jul-\/2014
+
+
+\begin{DoxyItemize}
+\item (enh \#9)\+: Enhanced caption template and styling for captions to prevent overflow of long file names out of the caption container.
+\end{DoxyItemize}
+
+\subsection*{version 1.\+7.\+0}
+
+{\bfseries Date\+:} 02-\/\+Jul-\/2014
+
+
+\begin{DoxyItemize}
+\item The plugin now offers an additional {\ttfamily overwrite\+Initial} option. This is by default set to {\ttfamily true}, whereby, any {\ttfamily initial\+Preview} content set will be overwritten, when new file is uploaded or when files are cleared. Setting it to {\ttfamily false} will help displaying a saved image or file from database always -\/ useful especially when using the {\ttfamily multiple} file upload feature.
+\end{DoxyItemize}
+
+\subsection*{version 1.\+6.\+0}
+
+{\bfseries Date\+:} 03-\/\+Jun-\/2014
+
+
+\begin{DoxyItemize}
+\item The plugin now offers an additional {\ttfamily refresh} method. This enables you to dynamically change element attributes or plugin options at runtime and refresh the widget.
+\end{DoxyItemize}
+
+\subsection*{version 1.\+5.\+0}
+
+{\bfseries Date\+:} 23-\/\+May-\/2014
+
+
+\begin{DoxyItemize}
+\item The plugin now offers an option to display initial preview of images/text/other files. This is useful for record update scenarios. This can be a single image/file or an array of images/files.
+\item Extending to the above feature, the plugin also allows you to set a preview caption for the initial preview field.
+\item The following element identifiers need to be passed as a string like \textquotesingle{}\#id\textquotesingle{} instead of a J\+Query object\+:
+\begin{DoxyItemize}
+\item el\+Caption\+Container
+\item el\+Caption\+Text
+\item el\+Preview\+Container
+\item el\+Preview\+Image
+\item el\+Preview\+Status
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection*{version 1.\+0.\+0}
+
+{\bfseries Date\+:} 01-\/\+Jan-\/2014
+
+Initial release. The following features are included in this release\+:
+
+
+\begin{DoxyItemize}
+\item The plugin will convert a simple H\+T\+ML file input to an advanced file picker control. Will help fallback to a file input for browsers not supporting J\+Query or Javascript.
+\item The file input consists of the following three sections with options and templates to control the display\+:
+\begin{DoxyItemize}
+\item file caption section\+: to display a brief information of the file(s) selected
+\item file action buttons section\+: to browse, remove, and upload files.
+\item file preview section\+: to display the selected files on client for preview (supports images and text file types). Other file types will be displayed as normal thumbnails.
+\end{DoxyItemize}
+\item The plugin automatically converts an input with {\ttfamily type = file} to an advanced file picker input if you set its {\ttfamily class = file}. All options to the input can be passed as H\+T\+M\+L5 {\ttfamily data} attributes.
+\item Ability to select and preview multiple files. Uses H\+T\+ML 5 File reader A\+PI to read and preview files. Displays the progress of files being being loaded onto the preview zone, in case many files are chosen.
+\item Offers predefined templates and C\+SS classes which can be changed to style your file-\/input display as per your needs.
+\item Option to show/hide any or all of the following\+:
+\begin{DoxyItemize}
+\item caption section
+\item preview section
+\item upload button
+\item remove button
+\end{DoxyItemize}
+\item Customise the location of the target container elements to display the entire plugin, the caption container, the caption text, the preview container, preview image, and preview status.
+\item For text file previews, autowrap the text to the thumbnail width, and show a wrap indicator link to display complete text on hover. You can customize the wrap indicator (which defaults to {$\dots$}).
+\item Customise the messages for preview, progress, and files selected.
+\item Upload action defaults to form submit. Supports an upload route/server action parameter for custom ajax based upload.
+\item Triggers J\+Query events for advanced development. Events currently available are {\ttfamily filereset} and {\ttfamily fileclear}.
+\item Disabled and readonly file input support.
+\item Size of the entire plugin is less than 11\+KB (about 9\+KB for the minified JS and 2\+KB for the minified C\+SS). 
+\end{DoxyItemize}
