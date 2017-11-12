@@ -58,8 +58,8 @@ class PCA:
         @return: valor dato=seleccionado como el mas optimo, sujeto=nombre del sujeto 
         """
         clasificacion=DistanciaCentroide(self.muestra)
-        valor,sujeto=clasificacion.clasificar(img,self.proyeccion.autocaras,self.proyeccion.proyecciones)
-        return valor,sujeto
+        valor,sujeto,por=clasificacion.clasificar(img,self.proyeccion.autocaras,self.proyeccion.proyecciones)
+        return valor,sujeto,por
 
 
     

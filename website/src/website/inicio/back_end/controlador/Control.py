@@ -10,7 +10,7 @@ class Control:
         self.gestor_pca = GestorPCA()
         self.gestor_muestra = GestorMuestra()
         
-    def entrenamiento(self,cantidad_autovectores):
+    def entrenamiento(self,cantidad_autovectores,porcentaje_prueba):
         """
         entrenamiento
         @details Se encarga de solicitar la funcion de entrenamiento 
@@ -21,9 +21,14 @@ class Control:
         @rtype: Boolean
         @return: True si se ejecuto correctamente
         """
-        self.gestor_muestra.cargar()
+        self.gestor_muestra.cargar(porcentaje_prueba)
         self.gestor_pca.entrenamiento(self.gestor_muestra.muestra,cantidad_autovectores)
-        return None
+        sujeto=[]
+        for i in self.gestor_muestra.muestra.sujetos:
+            for j in i.imagenes_prueba:
+                x,y,z=self.gestor_pca.identificacion_sujeto(j)
+                sujeto.append([y,z])
+        return sujeto
 
     def identificacion_sujeto(self,img):
         """

@@ -21,6 +21,7 @@ class Proyeccion:
         @return: None 
         """
         cantidad_valores = int(muestra.matriz.shape[1] * cantidad_autovectores / 100)
+        
         orden = np.argsort(muestra.autovalores)[::-1]
         autovectores = muestra.autovectores[orden]
         autovectores = autovectores[0: cantidad_valores]

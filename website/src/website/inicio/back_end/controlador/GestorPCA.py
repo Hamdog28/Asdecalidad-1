@@ -43,8 +43,8 @@ class GestorPCA:
         @rtype: Int,Boolean
         @return: valor dato=seleccionado como el mas optimo, sujeto=nombre del sujeto 
         """
-        valor,sujeto = self.pca.identificacion_sujetos(img)
-        return valor,sujeto 
+        valor,sujeto, por = self.pca.identificacion_sujetos(img)
+        return valor,sujeto,por
 
     def pruebas(self):
         """

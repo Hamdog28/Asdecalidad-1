@@ -6,6 +6,7 @@ class Sujeto:
         self.nombre = nombre
         self.imagenes = []
         self.submatriz = []
+        self.imagenes_prueba=[]
        
     def agregar_imagen(self,imagen):
         """

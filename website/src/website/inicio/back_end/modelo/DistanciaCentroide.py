@@ -33,11 +33,16 @@ class DistanciaCentroide:
             imagen_proyectada = autocaras.T * imagen
             distancia = proyecciones - imagen_proyectada
             distancia_normalizada = np.linalg.norm(distancia)
-            valores_distancias.append(np.mean(distancia_normalizada))
+            valores_distancias.append(np.min(distancia_normalizada))
             sujetos.append(i)
+        
         
         valor = min(valores_distancias)
         indice = valores_distancias.index(valor)
+        valores_distancias = np.array(valores_distancias)
+        valores_distancias = np.min(valores_distancias/ np.sum(valores_distancias))
+        
+        
         """
         789136.936619
         467760.314293
@@ -46,8 +51,6 @@ class DistanciaCentroide:
         435769.09093
         
         """
-        if valor > 400000:
-            return valor,sujetos[indice].nombre
-        else:
-            return valor,"no identificado"
-        
+
+        return valor,sujetos[indice].nombre,valores_distancias
+       

@@ -7,14 +7,44 @@ import os
 from back_end.modelo.Imagen import Imagen
 from back_end.controlador.Control import Control
 from django.template.context_processors import request
+from django.core.files.storage import FileSystemStorage
 
 ctl = Control()
-ctl.entrenamiento(100)
+
 
 def index(request):
+    template = loader.get_template('Login.html')
+    context={}
+    return HttpResponse(template.render(context,request))
+
+def principal(request):
     template = loader.get_template('index.html')
     context={}
     return HttpResponse(template.render(context,request))
+
+def identificar(request):
+    template = loader.get_template('identificar.html')
+    context={}
+    return HttpResponse(template.render(context,request))
+
+def pruebas(request):
+    template = loader.get_template('Pruebas.html')
+    context={}
+    return HttpResponse(template.render(context,request))
+
+def entrenamiento(request):
+    template = loader.get_template('Entrenamiento.html')
+    if request.method == 'POST':
+        C_autovectores =int( request.POST['cantidad_autovectores'])
+        P_muetra = int( request.POST['porcentaje_muestra'])
+        prueba=ctl.entrenamiento(C_autovectores,P_muetra)
+        context={"ruta":"/inicio/principal","boton":"Salir","prueba":prueba}
+        return HttpResponse(template.render(context,request))
+    
+    context={"ruta":"/inicio/entrenamiento","boton":"Entrenamiento","prueba":[]}
+    return HttpResponse(template.render(context,request))
+
+
 
 def nuevo_usuario(request):
     template = loader.get_template('nuevo_usuario.html')
@@ -23,8 +53,9 @@ def nuevo_usuario(request):
 
 def upload_files(request):
     if request.method == 'POST':
-        handle_uploaded_file(request.FILES['file'], str(request.FILES['file']))
-        return HttpResponse('<script>function mensaje() {alert("Imagen ingresada con exito"); }mensaje();window.location.replace("http://127.0.0.1:8000/inicio");</script> ')
+        
+        valor,sujeto=handle_uploaded_file(request.FILES['file'], str(request.FILES['file']))
+        return HttpResponse('<script>function mensaje() {alert("Sujeto '+sujeto+'"); }mensaje();window.location.replace("http://127.0.0.1:8000/inicio");</script> ')
         
     return HttpResponse('<script>function mensaje() {alert("Imagen ingresada incorrectaente"); }mensaje();window.location.replace("http://127.0.0.1:8000/inicio");</script> ')
 
@@ -76,6 +107,13 @@ def handle_uploaded_file(file, filename):
     with open('upload/' + filename, 'wb+') as destination:
         for chunk in file.chunks():
             destination.write(chunk)
+    """
+        fs = FileSystemStorage()
+    
+    print(filename)
+    filename = fs.save(filename, file)
+    uploaded_file_url = fs.url(filename)
+    """
     img=Imagen([])
     
     img.leer_imagen('upload/'+filename)
