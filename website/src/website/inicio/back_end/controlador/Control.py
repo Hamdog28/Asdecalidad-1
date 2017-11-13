@@ -41,7 +41,7 @@ class Control:
         @rtype: Int,String
         @return: valor dato=seleccionado como el mas optimo, sujeto=nombre del sujeto 
         """
-        valor,sujeto = self.gestor_pca.identificacion_sujeto(img)
+        valor,sujeto , por= self.gestor_pca.identificacion_sujeto(img)
         return valor,sujeto
 
     def cargar_imagenes(self,direccion):

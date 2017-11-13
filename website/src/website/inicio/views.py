@@ -8,7 +8,9 @@ from back_end.modelo.Imagen import Imagen
 from back_end.controlador.Control import Control
 from django.template.context_processors import request
 from django.core.files.storage import FileSystemStorage
-
+from back_end.controlador.Configuracion import Configuracion
+from django.core.files.base import ContentFile
+from django.db import models
 ctl = Control()
 
 
@@ -34,11 +36,13 @@ def pruebas(request):
 
 def entrenamiento(request):
     template = loader.get_template('Entrenamiento.html')
+    
     if request.method == 'POST':
+        template = loader.get_template('Resultado.html')
         C_autovectores =int( request.POST['cantidad_autovectores'])
         P_muetra = int( request.POST['porcentaje_muestra'])
         prueba=ctl.entrenamiento(C_autovectores,P_muetra)
-        context={"ruta":"/inicio/principal","boton":"Salir","prueba":prueba}
+        context={"prueba":prueba}
         return HttpResponse(template.render(context,request))
     
     context={"ruta":"/inicio/entrenamiento","boton":"Entrenamiento","prueba":[]}
@@ -51,13 +55,23 @@ def nuevo_usuario(request):
     context={}
     return HttpResponse(template.render(context,request))
 
+def resultado(request):
+    template = loader.get_template('resultado.html')
+    context={}
+    return HttpResponse(template.render(context,request))
+
 def upload_files(request):
+    template = loader.get_template('Imagen.html')
     if request.method == 'POST':
         
-        valor,sujeto=handle_uploaded_file(request.FILES['file'], str(request.FILES['file']))
-        return HttpResponse('<script>function mensaje() {alert("Sujeto '+sujeto+'"); }mensaje();window.location.replace("http://127.0.0.1:8000/inicio");</script> ')
+        valor,sujeto, por=handle_uploaded_file(request.FILES['file'], str(request.FILES['file']))
         
-    return HttpResponse('<script>function mensaje() {alert("Imagen ingresada incorrectaente"); }mensaje();window.location.replace("http://127.0.0.1:8000/inicio");</script> ')
+        context={"Sujeto":sujeto}
+        return HttpResponse(template.render(context,request))
+        
+        
+    context={"Sujeto":"Imagen incorrecta"}
+    return HttpResponse(template.render(context,request))
 
 
 def upload_file(request):
@@ -86,19 +100,33 @@ def uploaded_db(request):
     template = loader.get_template('carga_imagenes.html')
     context={}
     if request.method == 'POST':
-        handle_uploaded_folder(request.FILES['file'], str(request.FILES['file']))
+        handle_uploaded_folder(request)
         return HttpResponse(template.render(context,request))
         
     return HttpResponse(template.render(context,request))
 
-    
-def handle_uploaded_folder(file, filename):
-    if not os.path.exists('upload/'):
-        os.mkdir('upload/')
-    
-    with open('upload/' + filename, 'wb+') as destination:
-        for chunk in file.chunks():
-            destination.write(chunk)
+
+
+
+        
+def handle_uploaded_folder(file):
+    directory=Configuracion.RUTA_2+"Datos_2/"
+
+    i=1
+    j=1
+    for afile in file.FILES.getlist('file'):
+        if not os.path.exists(directory):
+            os.makedirs(directory+"s"+str(i))
+        fs = FileSystemStorage(location=directory+"s"+str(i))
+        
+        filename = fs.save(str(afile), afile)
+        uploaded_file_url = fs.url(filename)
+        
+        j=j+1
+        if j%10==0:
+            i=i+1
+ 
+
             
 def handle_uploaded_file(file, filename):
     if not os.path.exists('upload/'):

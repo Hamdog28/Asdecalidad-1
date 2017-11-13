@@ -70,13 +70,12 @@ Although you can use them, for a more unique website, replace these images with 
 
 	<!-- Header -->
     <header>
-    <form action="/inicio/imagen" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
+
         <div class="header-content">
             <div class="header-content-inner">
                 <h1>Sistema de reconocimiento facial</h1>
-                <p>Seleccione la imagen para el reconocimiento facial</p>
-                <input id="input-1a" type="file" class="file" data-show-preview="false" name="file" id="file" required>
+                <p>El sujeto identificado {{Sujeto}}</p>
+                <input class="btn btn-success" type="button" style="width:200px;" value="Salir" onclick="location.href='{% url 'principal' %}'"  />
             </div>
         </div>
     </form>

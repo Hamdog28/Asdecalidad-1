@@ -71,28 +71,18 @@ Although you can use them, for a more unique website, replace these images with 
 
 	<!-- Header -->
     <header>
-    <form action="{{ruta}}" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
         <div class="header-content">
             <div class="header-content-inner">
-                <h1>Entrenamiento</h1>
-                <p>Ingrese los datos solicitados:</p>
-                
-                <div style="width:200px; margin-left:400px;" >
-                Cantidad de autovectores:<br>
-                <input type="text" class="form-control" style="width:200px; color:black;"  name="cantidad_autovectores">
-                <br>
-                Porcentaje de muestra:<br>
-                <input type="text" class="form-control" style="width:200px; color:black;"  name="porcentaje_muestra">
-                <br>
-                <input class="btn btn-success" type="submit" style="width:200px;" value="{{boton}}">
-                </div>
+                <h1>Resultados Entrenamiento</h1>
+                {% for i in prueba %}
+		  				{{i}}<br>
+				{% endfor %}
+				
+				<input class="btn btn-success" type="button" style="width:200px;" value="Salir" onclick="location.href='{% url 'principal' %}'"  />
             </div>
           
            
-		{% for i in prueba %}
-		  {{i}}
-		{% endfor %}
+
         </div>
     </form> 
     </header>

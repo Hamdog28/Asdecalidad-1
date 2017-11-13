@@ -9,6 +9,7 @@ urlpatterns = [
     url(r'^identificar',views.identificar, name='identificar'),
     url(r'^entrenamiento',views.entrenamiento, name='entrenamiento'),
     url(r'^pruebas',views.pruebas, name='pruebas'),
+    url(r'^resultado',views.resultado, name='resultado'),
     url(r'^usuario',views.upload_file, name='upload_file'),
     url(r'^imagen',views.upload_files, name='upload_files'),
     url(r'^carga_imagen',views.uploaded_db, name='uploaded_db'),
