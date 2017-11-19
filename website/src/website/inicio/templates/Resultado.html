@@ -73,11 +73,26 @@ Although you can use them, for a more unique website, replace these images with 
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1>Resultados Entrenamiento</h1>
-                {% for i in prueba %}
-		  				{{i}}<br>
-				{% endfor %}
-				
+                <h2>Resultados Entrenamiento</h2>
+                <div   style="overflow:scroll;
+     height:250px;
+     width:1000px;">
+				<table class="table">
+
+					<tr>
+	                
+			  				<th> Clase</th> <th>Falsos positivos </th> <th> Falso negativos </th> <th>Aciertos </th> 
+					</tr>
+	                {% for i in prueba %}
+	                
+	                <tr>
+	                
+			  				<td>{{i.0}}</td><td>{{i.1}}</td><td>{{i.2}}</td><td>{{i.3}}</td>
+					</tr>
+					{% endfor %}
+					</table>
+				</div>
+				<br>
 				<input class="btn btn-success" type="button" style="width:200px;" value="Salir" onclick="location.href='{% url 'principal' %}'"  />
             </div>
           

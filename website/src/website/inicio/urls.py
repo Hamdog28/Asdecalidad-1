@@ -13,6 +13,8 @@ urlpatterns = [
     url(r'^usuario',views.upload_file, name='upload_file'),
     url(r'^imagen',views.upload_files, name='upload_files'),
     url(r'^carga_imagen',views.uploaded_db, name='uploaded_db'),
+    url(r'^fp_fn',views.fp_fn, name='fp_fn'),
+    
     url(r'^$',views.index, name='index'),
     
 ]

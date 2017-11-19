@@ -25,9 +25,19 @@ class Control:
         self.gestor_pca.entrenamiento(self.gestor_muestra.muestra,cantidad_autovectores)
         sujeto=[]
         for i in self.gestor_muestra.muestra.sujetos:
+            sujeto.append([i.nombre,0,0,0])
+            
+        for i in self.gestor_muestra.muestra.sujetos:
+            
             for j in i.imagenes_prueba:
                 x,y,z=self.gestor_pca.identificacion_sujeto(j)
-                sujeto.append([y,z])
+                if i.nombre == y:
+                    
+                    sujeto[int(i.nombre[1:])-1][3]+=1
+                else:
+                    sujeto[int(i.nombre[1:])-1][1]+=1
+                    sujeto[int(y[1:])-1][2]+=1
+                
         return sujeto
 
     def identificacion_sujeto(self,img):

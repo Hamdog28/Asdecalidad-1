@@ -34,7 +34,7 @@ class Imagen:
         self.img = cv2.imread(directorio)
         self.cambiar_dimenciones_imagen(Configuracion.IMG_X, Configuracion.IMG_Y)
         self.vectorizar()
-        return None
+        return True
 
     def img_a_gris(self):
         """

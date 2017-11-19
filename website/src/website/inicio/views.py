@@ -18,6 +18,12 @@ ctl = Control()
 
 def index(request):
     template = loader.get_template('Login.html')
+    
+    context={}
+    return HttpResponse(template.render(context,request))
+
+def fp_fn (request):
+    template = loader.get_template('fp_fn.html')
     context={}
     return HttpResponse(template.render(context,request))
 
@@ -74,7 +80,8 @@ def nuevo_usuario(request):
 
 def resultado(request):
     template = loader.get_template('resultado.html')
-    context={}
+    prueba=[1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10]
+    context={"prueba":prueba}
     return HttpResponse(template.render(context,request))
 
 def upload_files(request):
