@@ -26,6 +26,14 @@ class DistanciaCentroide:
         """
         valores_distancias = []
         sujetos = []
+        
+        imagen = np.matrix(img.vector).T        
+        imagen = imagen - np.mean(self.muestra.matriz, axis=1)
+        imagen_proyectada = autocaras.T * imagen
+        
+        distancia = np.power(np.sum(np.power( proyecciones - imagen_proyectada, 2)),0.5)
+        
+        v=np.min(distancia)
         for i in self.muestra.sujetos:
             imagen = np.matrix(img.vector).T
             i.generar_submatriz()
@@ -52,5 +60,5 @@ class DistanciaCentroide:
         
         """
 
-        return valor,sujetos[indice].nombre,valores_distancias
+        return v,sujetos[indice].nombre,valores_distancias
        

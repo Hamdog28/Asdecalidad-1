@@ -19,6 +19,8 @@ class UnitTest(unittest.TestCase):
         print("Test2: Cargar BD con un 50% para mustras")
         gestor=GestorMuestra()
         gestor.cargar(50)
+        print("Tamaño de muestra")
+        print(np.shape(gestor.muestra))
         self.assertTrue(gestor.muestra.sujetos, "Fallo en la carga, los sujetos no fueron cargados")
         
         

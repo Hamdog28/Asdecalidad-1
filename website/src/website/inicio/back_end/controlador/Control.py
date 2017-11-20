@@ -1,5 +1,6 @@
 from .GestorPCA import GestorPCA
 from .GestorMuestra import GestorMuestra
+from symbol import except_clause
 
 class Control:
     
@@ -24,20 +25,40 @@ class Control:
         self.gestor_muestra.cargar(porcentaje_prueba)
         self.gestor_pca.entrenamiento(self.gestor_muestra.muestra,cantidad_autovectores)
         sujeto=[]
+        aciertos=0
         for i in self.gestor_muestra.muestra.sujetos:
-            sujeto.append([i.nombre,0,0,0])
-            
+            sujeto.append([i.nombre,0,0,0,0,0,0])
+        cant_muestras = 0
         for i in self.gestor_muestra.muestra.sujetos:
             
             for j in i.imagenes_prueba:
+                cant_muestras+=1
                 x,y,z=self.gestor_pca.identificacion_sujeto(j)
                 if i.nombre == y:
                     
                     sujeto[int(i.nombre[1:])-1][3]+=1
+                    aciertos+=1
                 else:
                     sujeto[int(i.nombre[1:])-1][1]+=1
                     sujeto[int(y[1:])-1][2]+=1
+
+        for i in sujeto:
+            
+            try:
+                i[4]=i[3]/(i[3]+i[1])
+            except:
+                i[4]=None
                 
+            try:
+                i[5]=i[3]/(i[3]+i[2])
+            except:
+                i[5]=None
+                
+            try:
+                i[6]=(2*i[5]*i[4])/(i[4]+i[5])
+            except:
+                i[6]=None
+            
         return sujeto
 
     def identificacion_sujeto(self,img):
@@ -52,7 +73,7 @@ class Control:
         @return: valor dato=seleccionado como el mas optimo, sujeto=nombre del sujeto 
         """
         valor,sujeto , por= self.gestor_pca.identificacion_sujeto(img)
-        return valor,sujeto
+        return valor,sujeto,por
 
     def cargar_imagenes(self,direccion):
         """

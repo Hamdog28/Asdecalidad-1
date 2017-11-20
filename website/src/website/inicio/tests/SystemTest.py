@@ -35,7 +35,7 @@ class SystemTest(unittest.TestCase):
 
         
     def test_2(self):
-        print("Test2: muestra y proyeccion")
+        print("Test2: identificacion")
         SystemTest.driver.get("http://127.0.0.1:8000/inicio/principal")
         SystemTest.driver.find_element_by_xpath("//input[@value='Identificar']").click()
         SystemTest.driver.find_element_by_id("input-1a").clear()

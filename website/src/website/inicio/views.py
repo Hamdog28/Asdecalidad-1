@@ -41,17 +41,20 @@ def pruebas(request):
     template = loader.get_template('Pruebas.html')
     if request.method == 'POST':
         directory=Configuracion.RUTA_2+"prueba/"
-        template = loader.get_template('Resultado.html')
+        template = loader.get_template('Resultado2.html')
         subir_prueba(request)
         prueba = []
         nombres_archivos = os.listdir(directory)        
         for nombre_archivo in nombres_archivos:
-            img=Imagen([])
-    
-            img.leer_imagen(directory+""+nombre_archivo)
-    
-            valor,sujeto=ctl.identificacion_sujeto(img)
-            prueba.append([valor,sujeto])
+            if "Thumbs.db" != nombre_archivo:
+                img=Imagen([])
+                print(nombre_archivo)
+                
+                img.leer_imagen(directory+""+nombre_archivo)
+        
+                valor,sujeto,por=ctl.identificacion_sujeto(img)
+                prueba.append([nombre_archivo,sujeto,valor,por])
+                
         context={"prueba":prueba}
         return HttpResponse(template.render(context,request))
     context={}
@@ -137,16 +140,17 @@ def handle_uploaded_folder(file):
     directory=Configuracion.RUTA_2+"Datos_2/"
     shutil.rmtree(directory)
     i=1
-    j=1
+    j=0
     for afile in file.FILES.getlist('file'):
-        if not os.path.exists(directory):
-            os.makedirs(directory+"s"+str(i))
-        fs = FileSystemStorage(location=directory+"s"+str(i))
-        filename = fs.save(str(afile), afile)
-        uploaded_file_url = fs.url(filename)
-        j=j+1
-        if j%10==0:
-            i=i+1
+        if "Thumbs.db" != str(afile):
+            if not os.path.exists(directory):
+                os.makedirs(directory+"s"+str(i))
+            fs = FileSystemStorage(location=directory+"s"+str(i))
+            filename = fs.save(str(afile), afile)
+            uploaded_file_url = fs.url(filename)
+            j=j+1
+            if j%10==0:
+                i=i+1
     
     Configuracion.RUTA=directory
  
@@ -180,5 +184,5 @@ def handle_uploaded_file(file, filename):
     
     img.leer_imagen('upload/'+filename)
     
-    valor,sujeto=ctl.identificacion_sujeto(img)
-    return valor,sujeto,0
+    valor,sujeto,por=ctl.identificacion_sujeto(img)
+    return valor,sujeto,por

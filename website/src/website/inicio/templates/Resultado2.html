@@ -81,13 +81,13 @@ Although you can use them, for a more unique website, replace these images with 
 
 					<tr>
 	                
-			  				<th> Clase</th> <th>Falsos positivos </th> <th> Falso negativos </th> <th>Aciertos </th> <th>Precicion </th> <th>Recall </th> <th>F1 score </th> 
+			  				<th> Nombre archivo</th> <th>sujeto </th> <th> valor </th> <th>porcentaje </th> 
 					</tr>
 	                {% for i in prueba %}
 	                
 	                <tr>
 	                
-			  				<td>{{i.0}}</td><td>{{i.1}}</td><td>{{i.2}}</td> <td>{{i.3}}</td><td>{{i.4}}</td><td>{{i.5}}</td><td>{{i.6}}</td>
+			  				<td>{{i.0}}</td><td>{{i.1}}</td><td>{{i.2}}</td><td>{{i.3}}</td>
 					</tr>
 					{% endfor %}
 					</table>
