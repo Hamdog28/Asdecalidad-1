@@ -6,7 +6,7 @@ class FacadeAdministadror(Facade):
         Facade.__init__()
     
     def entrenamiento(self,cantidad_autovectores):
-        Facade.entrenamiento(self, cantidad_autovectores)
+        Facade.entrenamiento(self, cantidad_autovectores,0)
         return None
 
     def identificacion_sujeto(self):

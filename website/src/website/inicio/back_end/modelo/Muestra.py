@@ -40,7 +40,7 @@ class Muestra:
         self.matriz = np.matrix(self.matriz) - self.cara_promedio 
         self.matriz_covarianza = self.matriz.T * self.matriz
         self.matriz_covarianza = self.matriz_covarianza / self.matriz.shape[1] - 1 
-        return None
+        return True
   
     def calcular_autovalores_autovectores(self):
         """
@@ -51,7 +51,7 @@ class Muestra:
         @return: None 
         """
         self.autovalores, self.autovectores = np.linalg.eig(self.matriz_covarianza)
-        return None   
+        return True   
 
 
     

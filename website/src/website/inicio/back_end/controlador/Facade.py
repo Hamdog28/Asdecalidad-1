@@ -20,7 +20,7 @@ class Facade:
         @rtype: boolean
         @return: True si se ejecuto correctamente la funcion False si no 
         """
-        funciona = self.contol.entrenamiento(cantidad_autovectores)
+        funciona = self.contol.entrenamiento(cantidad_autovectores,0)
         return funciona 
 
     def identificacion_sujeto(self):

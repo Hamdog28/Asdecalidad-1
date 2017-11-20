@@ -1,3 +1,5 @@
+import shutil
+import cv2
 from django.http import HttpResponse
 from django.template import loader
 from django.http import HttpResponseRedirect
@@ -7,26 +9,96 @@ import os
 from back_end.modelo.Imagen import Imagen
 from back_end.controlador.Control import Control
 from django.template.context_processors import request
-
+from django.core.files.storage import FileSystemStorage
+from back_end.controlador.Configuracion import Configuracion
+from django.core.files.base import ContentFile
+from django.db import models
 ctl = Control()
-ctl.entrenamiento(100)
+
 
 def index(request):
+    template = loader.get_template('Login.html')
+    
+    context={}
+    return HttpResponse(template.render(context,request))
+
+def fp_fn (request):
+    template = loader.get_template('fp_fn.html')
+    context={}
+    return HttpResponse(template.render(context,request))
+
+def principal(request):
     template = loader.get_template('index.html')
     context={}
     return HttpResponse(template.render(context,request))
+
+def identificar(request):
+    template = loader.get_template('identificar.html')
+    context={}
+    return HttpResponse(template.render(context,request))
+
+def pruebas(request):
+    template = loader.get_template('Pruebas.html')
+    if request.method == 'POST':
+        directory=Configuracion.RUTA_2+"prueba/"
+        template = loader.get_template('Resultado2.html')
+        subir_prueba(request)
+        prueba = []
+        nombres_archivos = os.listdir(directory)        
+        for nombre_archivo in nombres_archivos:
+            if "Thumbs.db" != nombre_archivo:
+                img=Imagen([])
+                print(nombre_archivo)
+                
+                img.leer_imagen(directory+""+nombre_archivo)
+        
+                valor,sujeto,por=ctl.identificacion_sujeto(img)
+                prueba.append([nombre_archivo,sujeto,valor,por])
+                
+        context={"prueba":prueba}
+        return HttpResponse(template.render(context,request))
+    context={}
+    return HttpResponse(template.render(context,request))
+
+def entrenamiento(request):
+    template = loader.get_template('Entrenamiento.html')
+    
+    if request.method == 'POST':
+        template = loader.get_template('Resultado.html')
+        C_autovectores =int( request.POST['cantidad_autovectores'])
+        P_muetra = int( request.POST['porcentaje_muestra'])
+        prueba=ctl.entrenamiento(C_autovectores,P_muetra)
+        context={"prueba":prueba}
+        return HttpResponse(template.render(context,request))
+    
+    context={"ruta":"/inicio/entrenamiento","boton":"Entrenamiento","prueba":[]}
+    return HttpResponse(template.render(context,request))
+
+
 
 def nuevo_usuario(request):
     template = loader.get_template('nuevo_usuario.html')
     context={}
     return HttpResponse(template.render(context,request))
 
+def resultado(request):
+    template = loader.get_template('resultado.html')
+    prueba=[1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10]
+    context={"prueba":prueba}
+    return HttpResponse(template.render(context,request))
+
 def upload_files(request):
+    template = loader.get_template('Imagen.html')
     if request.method == 'POST':
-        handle_uploaded_file(request.FILES['file'], str(request.FILES['file']))
-        return HttpResponse('<script>function mensaje() {alert("Imagen ingresada con exito"); }mensaje();window.location.replace("http://127.0.0.1:8000/inicio");</script> ')
         
-    return HttpResponse('<script>function mensaje() {alert("Imagen ingresada incorrectaente"); }mensaje();window.location.replace("http://127.0.0.1:8000/inicio");</script> ')
+        valor,sujeto, por=handle_uploaded_file(request.FILES['file'], str(request.FILES['file']))
+        
+        context={"Sujeto":sujeto}
+        return HttpResponse(template.render(context,request))
+        
+        
+    context={"Sujeto":"Imagen incorrecta"}
+    return HttpResponse(template.render(context,request))
 
 
 def upload_file(request):
@@ -55,19 +127,44 @@ def uploaded_db(request):
     template = loader.get_template('carga_imagenes.html')
     context={}
     if request.method == 'POST':
-        handle_uploaded_folder(request.FILES['file'], str(request.FILES['file']))
+        handle_uploaded_folder(request)
         return HttpResponse(template.render(context,request))
         
     return HttpResponse(template.render(context,request))
 
+
+
+
+        
+def handle_uploaded_folder(file):
+    directory=Configuracion.RUTA_2+"Datos_2/"
+    shutil.rmtree(directory)
+    i=1
+    j=0
+    for afile in file.FILES.getlist('file'):
+        if "Thumbs.db" != str(afile):
+            if not os.path.exists(directory):
+                os.makedirs(directory+"s"+str(i))
+            fs = FileSystemStorage(location=directory+"s"+str(i))
+            filename = fs.save(str(afile), afile)
+            uploaded_file_url = fs.url(filename)
+            j=j+1
+            if j%10==0:
+                i=i+1
     
-def handle_uploaded_folder(file, filename):
-    if not os.path.exists('upload/'):
-        os.mkdir('upload/')
-    
-    with open('upload/' + filename, 'wb+') as destination:
-        for chunk in file.chunks():
-            destination.write(chunk)
+    Configuracion.RUTA=directory
+ 
+def subir_prueba(file):
+    directory=Configuracion.RUTA_2+"prueba/"
+    shutil.rmtree(directory)
+    if not os.path.exists(directory):
+            os.makedirs(directory)
+            
+    for afile in file.FILES.getlist('file'):
+        fs = FileSystemStorage(location=directory)
+        filename = fs.save(str(afile), afile)
+        uploaded_file_url = fs.url(filename)
+        
             
 def handle_uploaded_file(file, filename):
     if not os.path.exists('upload/'):
@@ -76,9 +173,16 @@ def handle_uploaded_file(file, filename):
     with open('upload/' + filename, 'wb+') as destination:
         for chunk in file.chunks():
             destination.write(chunk)
+    """
+        fs = FileSystemStorage()
+    
+    print(filename)
+    filename = fs.save(filename, file)
+    uploaded_file_url = fs.url(filename)
+    """
     img=Imagen([])
     
     img.leer_imagen('upload/'+filename)
     
-    valor,sujeto=ctl.identificacion_sujeto(img)
-    return valor,sujeto
+    valor,sujeto,por=ctl.identificacion_sujeto(img)
+    return valor,sujeto,por

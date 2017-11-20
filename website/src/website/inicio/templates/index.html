@@ -53,17 +53,13 @@ Although you can use them, for a more unique website, replace these images with 
             </div>
             <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="navbar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active">
-                        <a href="#">Inicio</a>
-                    </li>
+					 <ul class="nav navbar-nav navbar-right">
+
                     <li>
-                        <a href="/inicio/nuevo">Nuevo Usuario</a>
+                        <a href="/inicio">Salir</a>
                     </li>
 					
-                    <li>
-                        <a href="#">Contáctenos</a>
-                    </li>
+
                 </ul>
                 
             </div><!-- /.navbar-collapse -->
@@ -72,16 +68,27 @@ Although you can use them, for a more unique website, replace these images with 
 
 	<!-- Header -->
     <header>
-    <form action="/inicio/imagen" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
+    
         <div class="header-content">
             <div class="header-content-inner">
-                <h1>Sistema de reconocimiento facial</h1>
-                <p>Seleccione la imagen para el reconocimiento facial</p>
-                <input id="input-1a" type="file" class="file" data-show-preview="false" name="file" id="file" required>
+                <h1>Menu principal</h1>
+                <p>Seleccione la opcion deseada</p>
+                <input class="btn btn-success" type="button" style="width:200px;" value="Entrenamiento" onclick="location.href='{% url 'entrenamiento' %}'"  />
+                <br>
+                <br>
+                <input class="btn btn-success" type="button" style="width:200px;" value="Identificar" onclick="location.href='{% url 'identificar' %}'"  />
+                <br>
+                <br>
+                <input class="btn btn-success" type="button" style="width:200px;" value="Cargar imagenes" onclick="location.href='{% url 'uploaded_db' %}'"  />
+                <br>
+                <br>
+                <input class="btn btn-success" type="button" style="width:200px;" value="Pruebas" onclick="location.href='{% url 'pruebas' %}'"  />
+                <br>
+                <br>
+                <input class="btn btn-success" type="button" style="width:200px;" value="Nuevo usuario" onclick="location.href='{% url 'nuevo_usuario' %}'"  />
             </div>
         </div>
-    </form>
+    
     </header>
 
 	
